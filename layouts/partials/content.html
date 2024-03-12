@@ -22,7 +22,7 @@
 </section>
 
 {{ if or .NextInSection .PrevInSection }}
-	<nav id="pageTurner">
+	<nav id="pageTurner" class="flexed grow">
 		{{ with .NextInSection }}
 			<a class="button secondary" id="nextInSection" href="{{ .RelPermalink }}">Prev: {{ .Title }}</a>
 		{{ end }}

@@ -1,5 +1,5 @@
 <section id="downloadMyPaint">
-	<div id="downloadLinux" class="osDownload">
+	<div id="downloadLinux" class="osDownload flexed">
 		{{ partial "largeDownload" (dict "src" "/icons/brands/flathub.svg"
 		"href" .Site.Params.downloads.linux.flathub
 		"subtitle" (print .Site.Params.downloads.linux.flathubVer " - Flathub")) }}
@@ -13,12 +13,12 @@
 			"area" "second") }}
 		</div>
 	</div>
-	<div id="downloadMacOS" class="osDownload">
+	<div id="downloadMacOS" class="osDownload flexed">
 		{{ partial "largeDownload" (dict "src" "/icons/brands/apple.svg"
 		"href" .Site.Params.downloads.macos.macports
 		"subtitle" (print .Site.Params.downloads.macos.macportsVer " - MacPorts")) }}
 	</div>
-	<div id="downloadWindows" class="osDownload">
+	<div id="downloadWindows" class="osDownload flexed">
 		{{ partial "largeDownload" (dict "src" "/icons/brands/windows.svg"
 		"href" .Site.Params.downloads.windows.installer
 		"subtitle" (print .Site.Params.downloads.windows.ver " - Installer")) }}

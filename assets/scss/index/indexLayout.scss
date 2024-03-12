@@ -55,7 +55,6 @@ section.index {
 // Downloader
 div.osDownload {
 	display: none;
-	flex-wrap: wrap;
 	a.download.large {
 		display: inline-grid;
 		grid-template-areas:
@@ -74,10 +73,9 @@ div.osDownload {
 		}
 	}
 	.iconButtons {
-		flex-grow: 1;
 		display: grid;
 		grid-auto-columns: 3em;
-		grid-auto-rows: minmax(2.5em, 100%);
+		gap: 0.2rem;
 		a.download.small {
 			display: flex;
 			justify-content: center;
