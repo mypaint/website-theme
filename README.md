@@ -8,6 +8,6 @@ The official MyPaint website theme repository is hosted on [GitHub][github].
 [github]: https://github.com/mypaint/website-theme
 
 # License
-Original source code licensed under the [MIT license][mit].
+Original source code is licensed under the [MIT license][mit].
 
 [mit]: [LICENSE]
