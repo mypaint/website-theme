@@ -1,3 +1,4 @@
+// Buttons
 .button {
 	display: inline-flex;
 	column-gap: 0.4em;
@@ -5,6 +6,9 @@
 	padding: 1em 1.4em;
 	margin: 0.2em 0.3em 0.2em 0;
 	text-decoration: none;
+	&:last-of-type {
+		margin-right: 0;
+	}
 	&.secondary {
 		background-color: var(--alt-colour-1);
 		color: var(--text-colour);
@@ -20,6 +24,7 @@
 	}
 }
 
+// Images
 img {
 	max-width: 100%;
 	&.inline {
@@ -78,4 +83,9 @@ span.img {
 pre.mermaid {
 	display: flex;
 	justify-content: center;
+}
+
+// Discourse Comments
+#discourse-comments {
+	margin: 1rem 0 0;
 }
