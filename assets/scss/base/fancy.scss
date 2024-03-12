@@ -1,28 +1,3 @@
-// Buttons
-.button {
-	display: inline-flex;
-	column-gap: 0.4em;
-	align-items: center;
-	padding: 1em 1.4em;
-	margin: 0.2em 0.3em 0.2em 0;
-	text-decoration: none;
-	&:last-of-type {
-		margin-right: 0;
-	}
-	&.secondary {
-		background-color: var(--alt-colour-1);
-		color: var(--text-colour);
-
-		&:hover {
-			background-color: var(--alt-colour-2);
-			color: var(--link-colour-hover);
-		}
-		&:active {
-			background-color: var(--alt-colour-3);
-			color: var(--link-colour-active);
-		}
-	}
-}
 
 // Images
 img {
@@ -83,9 +58,4 @@ span.img {
 pre.mermaid {
 	display: flex;
 	justify-content: center;
-}
-
-// Discourse Comments
-#discourse-comments {
-	margin: 1rem 0 0;
 }

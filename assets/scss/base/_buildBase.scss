@@ -1,7 +1,6 @@
-@use 'design/basicDesign';
-@use 'design/asideDesign';
-@use 'design/articleDesign';
-@use 'design/fancy';
+@use 'base/baseLayout';
+@use 'base/baseDesign';
+@use 'base/fancy';
 
 // Body
 body {

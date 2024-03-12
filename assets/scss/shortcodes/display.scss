@@ -1,0 +1,16 @@
+.gridded {
+	display: grid;
+}
+
+.flexed {
+	display: flex;
+	gap: 0.2em;
+
+	&.row {
+		flex-direction: row;
+	} &.column {
+		flex-direction: column;
+	} &.grow > * {
+		flex-grow: 1;
+	}
+}

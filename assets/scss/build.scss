@@ -1,4 +1,7 @@
-@use "layout/buildLayout";
 @use "theme/buildTheme";
-@use "design/buildDesign";
+@use "base/buildBase";
+@use "header/buildHeader";
+@use "aside/buildAside";
+@use "article/buildArticle";
+@use "shortcodes/buildShortcodes";
 @use "vars";

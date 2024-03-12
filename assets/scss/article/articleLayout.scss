@@ -23,34 +23,9 @@ article {
 			margin: var(--article-with-image-padding)
 		}
 	}
+}
 
-	#pageTurner {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-content: center;
-	}
-
-	// Shortcodes
-	.gridded {
-		display: grid;
-	}
-	.flexed {
-		display: flex;
-		flex-wrap: wrap;
-		&.row {
-			flex-direction: row;
-		} &.column {
-			flex-direction: column;
-		} &.grow > * {
-			flex-grow: 1;
-		}
-	}
-	.floatLeft {
-		float: left;
-		margin-right: 1em;
-	}
-	.floatRight {
-		float: right;
-		margin-left: 1em;
-	}
+// Discourse Comments
+#discourse-comments {
+	margin: 1rem 0 0;
 }
