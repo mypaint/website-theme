@@ -75,7 +75,7 @@ div.osDownload {
 	.iconButtons {
 		display: grid;
 		grid-auto-columns: 3em;
-		gap: 0.2rem;
+		gap: var(--gap);
 		a.download.small {
 			display: flex;
 			justify-content: center;

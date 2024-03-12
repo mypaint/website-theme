@@ -5,7 +5,7 @@
 .flexed {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.2rem;
+	gap: var(--gap);
 
 	&.row {
 		flex-direction: row;

@@ -25,6 +25,10 @@ article {
 	}
 }
 
+#pageTurner .button {
+	max-width: calc(50% - var(--gap));
+}
+
 // Discourse Comments
 #discourse-comments {
 	margin: 1rem 0 0;
