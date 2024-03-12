@@ -1,0 +1,3 @@
+{{ if .Store.Get "hasMermaid" }}
+<script defer="" src='{{ (resources.Get "scripts/mermaid.js").RelPermalink }}' type="module"></script>
+{{ end }}

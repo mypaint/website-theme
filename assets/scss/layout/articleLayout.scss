@@ -1,0 +1,56 @@
+article {
+	section.title.withImage {
+		display: grid;
+		grid-template-areas: "main";
+		justify-items: center;
+		overflow: clip;
+		& > * {
+			grid-area: main;
+		}
+		.titleText {
+			z-index: 1;
+			padding: 4rem 2rem;
+		}
+		.titleImg {
+			// These are all "layout" properties, but we're using them to hide the bleed
+			//  from the filter blur effect.
+			position: relative;
+			top: -0.2rem;
+			width: calc(100% + 0.4rem);
+			height: calc(100% + 0.4rem);
+		}
+		& ~ * {
+			margin: var(--article-with-image-padding)
+		}
+	}
+
+	#pageTurner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+	}
+
+	// Shortcodes
+	.gridded {
+		display: grid;
+	}
+	.flexed {
+		display: flex;
+		flex-wrap: wrap;
+		&.row {
+			flex-direction: row;
+		} &.column {
+			flex-direction: column;
+		} &.grow > * {
+			flex-grow: 1;
+		}
+	}
+	.floatLeft {
+		float: left;
+		margin-right: 1em;
+	}
+	.floatRight {
+		float: right;
+		margin-left: 1em;
+	}
+}

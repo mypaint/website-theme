@@ -1,0 +1,9 @@
+{{ define "aside" }}
+	{{ partial "aside/siteNav.html" . }}
+	{{ partial "aside/buttons.html" . }}
+{{ end }}
+
+{{ define "title" }}{{ .Title }} | MyPaint{{ end }}
+{{ define "article" }}
+	{{ partial "content.html" . }}
+{{ end }}

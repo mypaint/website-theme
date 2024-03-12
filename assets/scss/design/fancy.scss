@@ -1,0 +1,81 @@
+.button {
+	display: inline-flex;
+	column-gap: 0.4em;
+	align-items: center;
+	padding: 1em 1.4em;
+	margin: 0.2em 0.3em 0.2em 0;
+	text-decoration: none;
+	&.secondary {
+		background-color: var(--alt-colour-1);
+		color: var(--text-colour);
+
+		&:hover {
+			background-color: var(--alt-colour-2);
+			color: var(--link-colour-hover);
+		}
+		&:active {
+			background-color: var(--alt-colour-3);
+			color: var(--link-colour-active);
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	&.inline {
+		height: var(--inline-image-size);
+		width: var(--inline-image-size);
+		vertical-align: sub;
+	}
+}
+
+span.img {
+	display: inline-block;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	background-color: var(--text-colour);
+	&.inline {
+		height: var(--inline-image-size);
+		width: var(--inline-image-size);
+		vertical-align: sub;
+	}
+	&.a {
+		background-color: var(--link-colour);
+		&:hover {
+			background-color: var(--link-colour-hover);
+		}
+		&:active {
+			background-color: var(--link-colour-active);
+		}
+		&:visited {
+			background-color: var(--link-colour-visited);
+			&:hover {
+				background-color: var(--link-colour-visited-hover);
+			}
+			&:active {
+				background-color: var(--link-colour-visited-active);
+			}
+		}
+	}
+	&.aUnthemed, &.aUnthemed:visited {
+		background-color: var(--text-colour);
+		&.selected {
+			background-color: var(--link-colour);
+		}
+		a:hover &,
+		button:hover &	{
+			background-color: var(--link-colour-hover);
+		}
+		a:active &,
+		button:active &	{
+			background-color: var(--link-colour-active);
+		}
+	}
+}
+
+// Mermaid
+pre.mermaid {
+	display: flex;
+	justify-content: center;
+}

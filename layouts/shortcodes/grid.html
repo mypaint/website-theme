@@ -1,0 +1,15 @@
+{{ $style := "" }}
+
+{{ with (.Get "rows") }}
+	{{ $style = (print $style "grid-template-rows:" . ";") }}
+{{ end }}
+{{ with (.Get "columns") }}
+	{{ $style = (print $style "grid-template-columns:" . ";") }}
+{{ end }}
+{{with (.Get "align") }}
+	{{ $style = (print $style "align-items:" . ";") }}
+{{ end }}
+
+<div class="gridded" style="{{ $style | safeCSS }}">
+	{{ .Inner }}
+</div>

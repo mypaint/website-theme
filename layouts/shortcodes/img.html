@@ -1,0 +1,44 @@
+{{ $classes := "imgInsert " }}
+{{ $src := "" }}
+{{ $width := "" }}
+{{ $height := "" }}
+
+{{ if (.Get "src") }}
+	{{ $src = partial "get/src.html" . }}
+{{ else }}
+	{{ errorf "\"src\" must be populated. See %s" $src .Position }}
+{{ end }}
+
+{{ with (.Get "width") }}
+	{{ $width = printf "width:100%%; max-width:%s" . }}
+{{ end }}
+{{ with (.Get "height") }}
+	{{ $width = printf "height:100%%; max-height:%s" . }}
+{{ end }}
+
+
+{{ with (.Get "float") }}
+	{{ if eq . "right" }}
+		{{ $classes = print $classes "floatRight " }}
+	{{ else if eq . "left" }}
+		{{ $classes = print $classes "floatLeft " }}
+	{{ else }}
+		{{ errorf "The \"img\" shortcode's parameter \"float\" must be one of \"floatLeft\" or \"floatRight\". %s" $.Position }}
+	{{ end }}
+{{ end }}
+
+
+{{ $src = $src | safeHTMLAttr }}
+{{ $alt := (printf "alt=%q" (.Get "alt")) | safeHTMLAttr }}
+{{ $classes = (printf "class=%q" (trim $classes " ")) | safeHTMLAttr }}
+{{ $style := printf "style=%q" (trim (print $width $height) " ") | safeHTMLAttr }}
+
+
+{{ if (.Get "caption") }}
+	<figure {{ $classes }} {{ $style }}>
+		<img {{ $src }} {{ $alt }}/>
+		<figcaption>{{ .Get "caption" }}</figcaption>
+	</figure>
+{{ else }}
+	<img {{ $classes }} {{ $style }} {{ $src }} {{ $alt }}/>
+{{ end }}

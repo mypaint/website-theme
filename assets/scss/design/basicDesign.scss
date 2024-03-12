@@ -1,0 +1,168 @@
+@use 'functions' as *;
+@use 'theme/fonts' as *;
+
+// Links
+a {
+	color: var(--link-colour);
+	&:hover {
+		color: var(--link-colour-hover);
+	}
+	&:active {
+		color: var(--link-colour-active);
+	}
+	&:visited {
+		color: var(--link-colour-visited);
+		&:hover {
+			color: var(--link-colour-visited-hover);
+		}
+		&:active {
+			color: var(--link-colour-visited-active);
+		}
+	}
+}
+
+.aUnthemed, .aUnthemed:visited,
+.selected, .selected:visited {
+	&:hover {
+		color: var(--link-colour-hover);
+		text-decoration: underline;
+	}
+	&:active {
+		color: var(--link-colour-active);
+	}
+}
+.aUnthemed, .aUnthemed:visited {
+	color: var(--text-colour);
+	text-decoration: none;
+}
+.selected, .selected:visited {
+	color: var(--link-colour);
+}
+
+// Headings
+@for $i from 1 through 5 {
+	h#{$i}, .h#{$i} {
+		font-size: valueInMap($headings, size, $i);
+		font-weight: valueInMap($headings, weight, $i);
+		font-style: valueInMap($headings, style, $i);
+		margin: 1.25em 0 0.25em;
+		.title + & {
+			margin-top: 0.25em;
+		}
+	}
+	@for $n from 1 through 5 {
+		h#{$i} + h#{$n} {
+			margin-top: 0.25em;
+		}
+	}
+}
+
+// Line height
+p, li {
+	line-height: 1.4em;
+}
+pre {
+	line-height: 2em;
+}
+
+li {
+	padding-left: 0.4em;
+	&:not(:last-child) {
+		margin-bottom: 0.6em;
+	}
+}
+
+// Blockquotes
+blockquote {
+	padding-left: 1em;
+	border-left: 2px solid var(--text-colour-alt);
+	color: var(--text-colour-alt);
+}
+
+// Tables
+table {
+	display: block;
+	overflow-x: auto;
+	td, th {
+		padding: 0.75em 1em;
+	}
+	// Borders
+	border-collapse: collapse;
+	th, td {
+		border-style: solid;
+		border-width: 0;
+		border-color: var(--text-colour-alt);
+	}
+	th {
+		border-bottom-width: 3px;
+	}
+	td + td {
+		border-left-width: 2px;
+	}
+	// Backgrounds
+	tr {
+		&:nth-of-type(odd) {
+			background-color: var(--background-colour);
+		}
+		&:nth-of-type(even) {
+			background-color: var(--alt-colour-1);
+		}
+	}
+}
+
+// Code
+code {
+	font-family: "Fira Code", monospace;
+	font-size: 80%;
+	background-color: var(--alt-colour-1);
+}
+
+pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 1em;
+}
+
+:not(pre) > code {
+	padding: 0.1em 0.2em;
+}
+
+// Buttons
+button {
+	padding: inherit;
+	border: inherit;
+	background-color: inherit;
+	font-size: inherit;
+	font-family: var(--font-families);
+	font-weight: normal;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// Select
+select {
+	padding: 0.2em 0.4em;
+	border-width: 0;
+	background-color: var(--alt-colour-1);
+	color: var(--text-colour);
+	font-family: var(--font-families);
+	font-size: 1em;
+	&:hover {
+		background-color: var(--alt-colour-2);
+	}
+	&:active {
+		background-color: var(--alt-colour-3);
+	}
+}
+
+// Header
+header {
+	nav span.img {
+		width: 100%;
+		height: 100%;
+	}
+	#skipContent {
+		background-color: var(--alt-colour-1-hex);
+	}
+}

@@ -1,0 +1,182 @@
+@mixin lightTheme {
+	--code-blue: #2D7CBE;
+	--code-green: #4D7133;
+	--code-grey: #676B74;
+	--code-orange: #d19a66; // Not changed
+	--code-purple: #9248A8;
+	--code-red: #A1454C;
+	--code-teal: #2F7A83;
+	--code-yellow: #796634;
+}
+
+@mixin darkTheme {
+	--code-blue: #61afef;
+	--code-green: #98c379;
+	--code-grey: #80858F;
+	--code-orange: #d19a66;
+	--code-purple: #c678dd;
+	--code-red: #e06c75;
+	--code-teal: #56b6c2;
+	--code-yellow: #e5c07b;
+}
+
+@media (prefers-color-scheme: light) {
+	.systemTheme:root {
+		@include lightTheme;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.systemTheme:root {
+		@include darkTheme;
+	}
+}
+
+.darkTheme:root {
+	@include darkTheme
+}
+.lightTheme:root {
+	@include lightTheme;
+}
+
+.chroma { // PreWrapper
+	.x, // Other
+	.err, // Error
+	.cl, // CodeLine
+	.l, // Literal
+	.ld, // LiteralDate
+	.p, // Punctuation
+	.g, // Generic
+	.ge, // GenericEmph
+	.gr, // GenericError
+	.gh, // GenericHeading
+	.go, // GenericOutput
+	.gp, // GenericPrompt
+	.gs, // GenericStrong
+	.gu, // GenericSubheading
+	.gt, // GenericTraceback
+	.gl, // GenericUnderline
+	.w {} //TextWhitespace.chr
+
+	.lnlinks { // LineLink
+		outline: none;
+		text-decoration: none;
+		color: inherit;
+	}
+	.lntd { // LineTableTD
+		vertical-align: top;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+	.lntable { // LineTable
+		border-spacing: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+
+	.hl { // LineHighlight
+		background-color: #3d4148
+	}
+
+	.lnt, // LineNumbersTable
+	.ln { // LineNumbers
+		white-space: pre;
+		-webkit-user-select: none;
+		user-select: none;
+		margin-right: 0.4em;
+		padding: 0 0.4em 0 0.4em;
+		color: #55595f;
+	}
+
+	.k, // Keyword
+	.kd, // KeywordDeclaration
+	.kn, // KeywordNamespace
+	.kp, // KeywordPseudo
+	.kr { // KeywordReserved
+		color: var(--code-purple);
+	}
+
+	.kc, // KeywordConstant
+	.kt, // KeywordType
+	.nb, // NameBuiltin
+	.nc { // NameClass
+		color: var(--code-yellow);
+	}
+
+	.n, // Name
+	.na, // NameAttribute
+	.bp, // NameBuiltinPseudo
+	.no, // NameConstant
+	.ni, // NameEntity
+	.ne, // NameException
+	.nl, // NameLabel
+	.nn, // NameNamespace
+	.nx, // NameOther
+	.py, // NameProperty
+	.nt, // NameTag
+	.nv, // NameVariable
+	.vc, // NameVariableClass
+	.vg, // NameVariableGlobal
+	.vi, // NameVariableInstance
+	.vm, // NameVariableMagic
+	.gd { // GenericDeleted
+		color: var(--code-red);
+	}
+
+	.gi, // GenericInserted
+	.s, // LiteralString
+	.sa, // LiteralStringAffix
+	.sb, // LiteralStringBacktick
+	.sc, // LiteralStringChar
+	.dl, // LiteralStringDelimiter
+	.sd, // LiteralStringDoc
+	.s2, // LiteralStringDouble
+	.se, // LiteralStringEscape
+	.sh, // LiteralStringHeredoc
+	.si, // LiteralStringInterpol
+	.sx, // LiteralStringOther
+	.sr, // LiteralStringRegex
+	.s1, // LiteralStringSingle
+	.ss { // LiteralStringSymbol
+		color: var(--code-green);
+	}
+
+	.m, // LiteralNumber
+	.mb, // LiteralNumberBin
+	.mf, // LiteralNumberFloat
+	.mh, // LiteralNumberHex
+	.mi, // LiteralNumberInteger
+	.il, // LiteralNumberIntegerLong
+	.mo { // LiteralNumberOct
+		color: var(--code-orange);
+	}
+
+	.nd, // NameDecorator
+	.nf { // NameFunction
+		color: var(--code-blue);
+	}
+
+	.fm, // NameFunctionMagic
+	.o, // Operator
+	.ow { // OperatorWord
+		color: var(--code-teal);
+	}
+
+	.c, // Comment
+	.ch, // CommentHashbang
+	.cm, // CommentMultiline
+	.c1, // CommentSingle
+	.cs, // CommentSpecial
+	.cp, // CommentPreproc
+	.cpf { // CommentPreprocFile
+		color: var(--code-grey);
+	}
+
+	.gi,
+	.nf,
+	.fm {
+		font-weight: bold;
+	}
+}

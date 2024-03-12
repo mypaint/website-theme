@@ -1,0 +1,36 @@
+@use 'functions' as *;
+
+/// Size
+$headings: (
+	size: (var(--article-title-size),2.4em,2.0em,1.6em,1.3em),
+	weight: (bold,bold,normal,normal,normal),
+	style: (normal,normal,normal,normal,italic)
+);
+
+/// Family
+:root {
+	--font-families: 'Atkinson Hyperlegible',Roboto,Ubuntu,Arial,Helvetica;
+}
+//// Atkinson Hyperlegible
+$atkinsonTypefaces: (
+name: (Regular,Bold,Italic,BoldItalic),
+weight: (normal,bold,normal,bold),
+style: (normal,normal,italic,italic)
+);
+@for $i from 1 through 4 {
+	@font-face {
+		font-family: "Atkinson Hyperlegible";
+		src: url('/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-#{valueInMap($atkinsonTypefaces,name,$i)}.ttf');
+		font-weight: valueInMap($atkinsonTypefaces,weight,$i);
+		font-style: valueInMap($atkinsonTypefaces,style,$i);
+	}
+}
+
+//// Fira Code
+@font-face {
+	font-family: "Fira Code";
+	src: url('/fonts/FiraCode/FiraCode-VF.ttf');
+	font-weight: 300 700;
+	font-style: normal;
+}
+

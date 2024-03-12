@@ -1,0 +1,13 @@
+{{ $output := "" }}
+{{ with (.Get "src") }}
+	{{ if (findRE `https?://` .) }}
+			{{ $output = (resources.GetRemote .).RelPermalink }}
+	{{ else if $.Page.Resources.Get . }}
+		{{ $output = ($.Page.Resources.Get .).RelPermalink }}
+	{{ else if resources.Get . }}
+		{{ $output = (resources.Get .).RelPermalink }}
+	{{ else }}
+		{{ errorf "\"src\" points to path %q which does not exist. See %s" . $.Position }}
+	{{ end }}
+{{ end }}
+{{ return $output }}

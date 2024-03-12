@@ -1,0 +1,23 @@
+<!-- Site configuration -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+<!-- Stylesheet -->
+{{ $styleOpts := (dict "transpiler" "dartsass" "targetPath" "main.css" "outputStyle" "compressed") }}
+{{ $style := resources.Get "scss/build.scss" | resources.ToCSS $styleOpts }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- Icons -->
+<link
+		id="faviconDark"
+		rel="icon"
+		href='{{ (resources.Get "images/mypaint/favicon-dark.svg").RelPermalink }}'>
+<link
+		id="faviconLight"
+		rel="icon"
+		href='{{ (resources.Get "images/mypaint/favicon-light.svg").RelPermalink }}'>
+
+<!-- Site information -->
+<meta name="description" content="{{ .Site.Params.siteDescription }}">
+<meta name="keywords" content="{{ .Site.Params.siteKeywords }}">
+

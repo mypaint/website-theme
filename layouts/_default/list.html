@@ -1,0 +1,22 @@
+{{ define "aside" }}
+	{{ partial "aside/siteNav.html" . }}
+	{{ partial "aside/buttons.html" . }}
+	{{ if .Params.showInfo }}
+		{{ partial "aside/pageInfo.html" . }}
+	{{ end }}
+	{{ if .Params.showTOC }}
+		{{ partial "aside/pageNav.html" . }}
+	{{ end }}
+	{{ with .Params.sectionNavURL }}
+		{{ partial "aside/sectionNav.html" (dict "currPage" $.Page "rootSection" ($.Site.GetPage  . )) }}
+	{{ end }}
+{{ end }}
+{{ define "article" }}
+	{{ partial "content" . }}
+	{{ if not .Params.hideList }}
+		{{ partial "list.html" . }}
+	{{ end }}
+{{ end }}
+
+{{ define "article" }}
+{{ end }}

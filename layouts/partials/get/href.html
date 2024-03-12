@@ -1,0 +1,11 @@
+{{ $output := "" }}
+{{ if (findRE `https?://` .href) }}
+	{{ $output = .href }}
+{{ else if (.context.Site.Param .href) }}
+	{{ $output = .context.Site.Param .href }}
+{{ else if (.context.Site.GetPage .href )}}
+	{{ $output = (.context.Site.GetPage .href).RelPermalink }}
+{{ else if (.context.RelRef (dict "path" .href ))}}
+	{{ $output = .context.RelRef (dict "path" .href) }}
+{{ end }}
+{{ return $output }}

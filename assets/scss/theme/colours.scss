@@ -1,0 +1,130 @@
+@import 'theme/opencolor';
+
+// Global
+:root {
+	// Dark theme
+	--dark-alt-colour-1: rgba(255,255,255,0.05);
+	--dark-text-colour: #{$gray-0};
+	/// Links
+	--dark-link-colour: #{$blue-4};
+	--dark-link-colour-hover: #{$blue-3};
+	--dark-link-colour-active: #{$blue-2};
+	// Light theme
+	--light-alt-colour-1: rgba(0,0,0,0.05);
+	--light-alt-colour-2: rgba(0,0,0,0.075);
+	--light-alt-colour-3: rgba(0,0,0,0.1);
+	// Hash
+	--hash-colour: transparent;
+}
+
+@mixin lightTheme {
+	--body-background-colour: #{$gray-0};
+	--background-colour: var(--body-background-colour);
+	--alt-colour-1: var(--light-alt-colour-1);
+	--alt-colour-2: var(--light-alt-colour-2);
+	--alt-colour-3: var(--light-alt-colour-3);
+	--alt-colour-1-hex: ##ebebeb;
+	--text-colour: #{$gray-9};
+	--text-colour-alt: #{$gray-7};
+	// Links
+	--link-colour: #{$blue-7};
+	--link-colour-hover: #{$blue-8};
+	--link-colour-active: #{$blue-9};
+	--link-colour-visited: #{$violet-5};
+	--link-colour-visited-hover: #{$violet-7};
+	--link-colour-visited-active: #{$violet-9};
+	// Hash
+	--hash-colour-parent-hover: #{$gray-5};
+	--hash-colour-hover: var(--text-colour-alt);
+}
+
+@mixin darkTheme {
+	--body-background-colour: #{$gray-10};
+	--background-colour: var(--body-background-colour);
+	--alt-colour-1: var(--dark-alt-colour-1);
+	--alt-colour-2: rgba(255,255,255,0.075);
+	--alt-colour-3: rgba(255,255,255,0.1);
+	--alt-colour-1-hex: #222222;
+	--text-colour: var(--dark-text-colour);
+	--text-colour-alt: #{$gray-5};
+	// Links
+	--link-colour: var(--dark-link-colour);
+	--link-colour-hover: var(--dark-link-colour-hover);
+	--link-colour-active: var(--dark-link-colour-active);
+	--link-colour-visited: #{$violet-4};
+	--link-colour-visited-hover: #{$violet-3};
+	--link-colour-visited-active: #{$violet-2};
+	// Hash
+	--hash-colour-parent-hover: #{$gray-6};
+	--hash-colour-hover: #{$gray-4};
+}
+
+// Colour classes
+@mixin lightHighlight {
+	.yellow {
+		color: $yellow-9;
+	}
+	.red {
+		color: $red-9;
+	}
+}
+
+@mixin darkHighlight {
+	.yellow {
+		color: $yellow-4;
+	}
+	.red {
+		color: $red-6;
+	}
+}
+
+// Generate the themes
+/// Hide the theme buttons by default
+#systemThemeButton,
+#darkThemeButton,
+#lightThemeButton {
+	display: none;
+}
+
+@media (prefers-color-scheme: light) {
+	.systemTheme {
+		&:root {
+			@include lightTheme;
+		}
+		@include lightHighlight;
+		#systemThemeButton {
+			display: inline;
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.systemTheme {
+		&:root {
+			@include darkTheme;
+		}
+		@include darkHighlight;
+		#systemThemeButton {
+			display: inline;
+		}
+	}
+}
+
+.lightTheme {
+	#lightThemeButton {
+		display: inline;
+	}
+	&:root {
+		@include lightTheme;
+	}
+	@include lightHighlight;
+}
+.darkTheme {
+	#darkThemeButton {
+		display: inline;
+	}
+	&:root {
+		@include darkTheme;
+	}
+	@include darkHighlight;
+}

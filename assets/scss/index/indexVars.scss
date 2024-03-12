@@ -1,0 +1,37 @@
+@import 'vars';
+// Vars
+:root {
+	--header-position: absolute;
+	--aside-display: none;
+	--section-padding: 2rem;
+	--section-filter: none;
+	--background-size: 100%;
+	--container-max-width: 30rem;
+	--container-padding: 4rem 2rem;
+	--container-filter: var(--filter-heavy);
+	--artist-shadow: 0 0 8px #000,
+		0 0 8px #000,
+		0 0 8px #000,
+		0 0 8px #000;
+}
+// Colours
+.darkTheme:root {
+	--alt-colour-1: rgba(0,0,0,0.2);
+	--alt-colour-2: rgba(0,0,0,0.25);
+	--alt-colour-3: rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: $small-screen) {
+	:root {
+		--header-position: fixed;
+		--section-padding: 0;
+		--section-filter: var(--filter-heavy);
+		--container-max-width: unset;
+		--container-padding: 0 var(--body-side-padding);
+		--container-filter: none;
+		--artist-shadow: 0;
+	}
+	section.index {
+		align-items: center!important;
+	}
+}

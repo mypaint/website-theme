@@ -1,0 +1,7 @@
+{{ $level := math.Sum .Level 1 }}
+<h{{ $level }} id="{{ .Anchor | safeURL }}">
+	{{ .Text | safeHTML }}
+    <a class="headingAnchor" href="#{{ .Anchor | safeURL }}">
+		<span class="img inline" style='mask-image:url({{ (resources.Get "icons/link.svg").RelPermalink }})' alt="Heading link"></span>
+    </a> 
+</h{{ $level }}>

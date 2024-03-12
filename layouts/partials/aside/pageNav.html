@@ -1,0 +1,33 @@
+{{ if .Fragments.Headings }}
+	<nav id="pageNav">
+		<details>
+			<summary class="h5">Page Navigation</summary>
+			{{ partial "pageNavItems.html" (dict "scopeHeadings" .Fragments.Headings "rootHeading" true) }}
+		</details>
+	</nav>
+{{ end }}
+
+{{ define "partials/pageNavItems.html" }}
+	<ul>
+		{{ if .rootHeading }}
+			<li><a class="aUnthemed" href="#">Return to top</a></li>
+		{{ end }}
+		{{ range .scopeHeadings }}
+			<li>
+				{{ if and .Headings (lt .Level 3) }}
+					{{ if eq .Level 1 }}
+						<details>
+							<summary><a class="aUnthemed pageNavItem" href='{{ print "#" .ID }}'>{{ htmlUnescape .Title | safeHTML }}</a></summary>
+							{{ partial "pageNavItems.html" (dict "scopeHeadings" .Headings) }}
+						</details>
+					{{ else }}
+						<a class="aUnthemed pageNavItem" href='{{ print "#" .ID }}'>{{ htmlUnescape .Title | safeHTML }}</a>
+						{{ partial "pageNavItems.html" (dict "scopeHeadings" .Headings) }}
+					{{ end }}
+				{{ else }}
+					<a class="aUnthemed pageNavItem" href='{{ print "#" .ID }}'>{{ htmlUnescape .Title | safeHTML }}</a>
+				{{ end }}
+			</li>
+		{{ end }}
+	</ul>
+{{ end }}

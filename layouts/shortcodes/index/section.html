@@ -1,0 +1,27 @@
+{{ $src := partial "get/src.html" . }}
+{{ $alt := .Get "alt" }}
+{{ $direction := "" }}
+{{ $work := .Get "work" }}
+{{ $artist := .Get "artist" }}
+{{ $artistHref := (.Get "artistHref") | safeURL }}
+
+{{ with (.Get "direction") }}
+	{{ if eq . "start" }}
+		{{ $direction = "start" }}
+	{{ else if eq . "centre" }}
+		{{ $direction = "center" }}
+	{{ else if eq . "end" }}
+		{{ $direction = "end" }}
+	{{ end }}
+{{ end }}
+
+<section class="index {{ $direction }}">
+	<img class="background" src="{{ $src }}" alt="{{ $alt }}">
+	<div class="container">
+		{{ .Inner }}
+	</div>
+	<div class="artist">
+		<i>{{ $work }}</i> by
+		<a class="selected" href="{{ $artistHref }}">{{ $artist }}</a>
+	</div>
+</section>

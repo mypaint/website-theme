@@ -1,0 +1,72 @@
+<section id="downloadMyPaint">
+	<div id="downloadLinux" class="osDownload">
+		{{ partial "largeDownload" (dict "src" "/icons/brands/flathub.svg"
+		"href" .Site.Params.downloads.linux.flathub
+		"subtitle" (print .Site.Params.downloads.linux.flathubVer " - Flathub")) }}
+		<div class="iconButtons" style='grid-template-areas:"first""second"'>
+			{{ partial "iconButton" (dict "src" "/icons/brands/appimage.svg"
+			"href" .Site.Params.downloads.linux.appimage
+			"subtitle" (print "AppImage - " .Site.Params.downloads.linux.ver )
+			"area" "first") }}
+			{{ partial "iconButton" (dict "src" "/icons/flask-empty-outline.svg"
+			"href" .Site.Params.downloads.linux.rolling "subtitle" "Rolling Release (Linux)"
+			"area" "second") }}
+		</div>
+	</div>
+	<div id="downloadMacOS" class="osDownload">
+		{{ partial "largeDownload" (dict "src" "/icons/brands/apple.svg"
+		"href" .Site.Params.downloads.macos.macports
+		"subtitle" (print .Site.Params.downloads.macos.macportsVer " - MacPorts")) }}
+	</div>
+	<div id="downloadWindows" class="osDownload">
+		{{ partial "largeDownload" (dict "src" "/icons/brands/windows.svg"
+		"href" .Site.Params.downloads.windows.installer
+		"subtitle" (print .Site.Params.downloads.windows.ver " - Installer")) }}
+		<div class="iconButtons" style='grid-template-areas:"first  second""first third"';>
+			{{ partial "iconButton" (dict "src" "/icons/package-variant-closed.svg"
+			"href" .Site.Params.downloads.windows.archive
+			"subtitle" (print "Standalone Archive - " .Site.Params.downloads.windows.ver )
+			"area" "first") }}
+
+			{{ partial "iconButton" (dict "src" "/icons/brands/chocolatey.svg"
+			"href" .Site.Params.downloads.windows.chocolatey
+			"subtitle" (print "Chocolatey - " .Site.Params.downloads.windows.chocolateyVer)
+			"area" "second") }}
+
+			{{ partial "iconButton" (dict "src" "/icons/flask-empty-outline.svg"
+			"href" .Site.Params.downloads.windows.rolling
+			"subtitle" "Rolling Release (Windows)"
+			"area" "third") }}
+		</div>
+	</div>
+	<div id="downloadIncompatible" class="osDownload">
+		<p>Your device appears to be incompatible with MyPaint.<br>
+		Please select a download for one of the following operating systems:</p>
+	</div>
+	<div id="osSelect">
+		<button id="Linux" class="aUnthemed">Linux</button> |
+		<button id="MacOS" class="aUnthemed">macOS</button> |
+		<button id="Windows" class="aUnthemed">Windows</button> |
+		<a class="aUnthemed" href="{{ .Site.Params.downloads.github | safeURL }}">All Releases</a>
+	</div>
+</section>
+
+{{ define "partials/largeDownload.html" }}
+	<a class="button download large secondary"
+		href="{{ .href | safeURL }}">
+		<span class="aUnthemed img inline"
+			  style='mask-image:url({{ (resources.Get  .src).RelPermalink }})'
+			  alt=""></span>
+		<span class="main">Download MyPaint</span>
+		<span class="sub">{{ .subtitle  }}</span>
+	</a>
+{{ end }}
+{{ define "partials/iconButton.html" }}
+	<a
+		class="button download secondary small"
+		href="{{ .href | safeURL }}"
+		title="{{ .subtitle }}"
+		style="grid-area:{{ .area | safeCSS }}">
+		<span class="aUnthemed img inline" style='mask-image:url({{ (resources.Get  .src).RelPermalink }})' alt=""></span>
+	</a>
+{{ end }}

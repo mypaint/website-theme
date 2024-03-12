@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use 'sass:list';
+
+@function valueInMap($map, $key, $element) {
+	@return list.nth(map.get($map, $key), $element);
+}

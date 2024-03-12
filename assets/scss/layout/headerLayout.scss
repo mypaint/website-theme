@@ -1,0 +1,42 @@
+header {
+	// Positioning
+	position: var(--header-position);
+	z-index: 99;
+	top: 0;
+	// Form
+	display: block;
+	height: 4.5rem;
+	width: 100vw;
+	padding: 1.5rem var(--body-side-padding);
+	// Design?
+	background-color: var(--body-background-colour);
+
+	// Nav Items
+	> nav {
+		display: grid;
+		justify-content: center;
+		grid-column-gap: var(--header-nav-gap);
+		grid-template-columns: var(--header-nav-columns);
+		text-align: center;
+		#headerNavMenu {
+			display: var(--header-menu-display);
+			justify-self: start;
+		}
+	}
+	// Skip to content
+	#skipContent {
+		position: absolute;
+		z-index: 99;
+		top: 1rem;
+		left: 1rem;
+		display: block;
+		overflow: hidden;
+		height: 0;
+		width: 0;
+		&:focus {
+			height: unset;
+			width: unset;
+			padding: 1em 2em;
+		}
+	}
+}

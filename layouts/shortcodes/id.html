@@ -1,0 +1,2 @@
+{{ $id := .Get 0 }}
+<span id={{ $id }}>{{ .Inner | markdownify }}</span>

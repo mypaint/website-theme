@@ -1,0 +1,51 @@
+<h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>
+{{ if or .Params.author .Date (gt .Ancestors.Len 1) }}
+	<p class="subtitle">
+
+		{{ with .Params.author }}
+			<span class="img inline"
+				style='mask-image:url({{ (resources.Get "icons/account-outline.svg").RelPermalink }})'
+				alt="Author: ">
+			</span>
+			{{ . }},
+		{{ end }}
+
+		{{ with .Date }}
+			<span class="img inline"
+				  style='mask-image:url({{ (resources.Get "icons/clock-outline.svg").RelPermalink }})'
+				  alt="Date: ">
+			</span>
+			<span title="{{ .Local }}">{{ .Local.Format "2006-01-02" }}</span>,
+		{{ end }}
+
+		{{ with .Params.related }}
+			<span class="img inline"
+				  style='mask-image:url({{ (resources.Get "icons/share-variant-outline.svg").RelPermalink }})'
+				  alt="Related: ">
+			</span>
+			{{ if (isset . 0)  }}
+				{{ range . }}
+					{{ $page := $.Page.GetPage . }}
+					<a class="aUnthemed selected" href="{{ $page.RelPermalink }}">
+						{{ $page.Title }}</a>,
+				{{ end }}
+			{{ else }}
+				{{ $page := $.Site.GetPage . }}
+				<a class="aUnthemed selected" href="{{ $page.RelPermalink }}">
+					{{ $page.Title }}</a>,
+			{{ end }}
+		{{ end }}
+
+		{{ if gt .Ancestors.Len 1 }}
+			<span class="img inline"
+				  style='mask-image:url({{ (resources.Get "icons/folder-outline.svg").RelPermalink }})'
+				  alt="In: "></span>
+			{{ range .Ancestors.Reverse }}
+				{{ if not .IsHome }}
+					{{ if ne . (index $.Ancestors.Reverse 1) }}&gt;{{ end }}
+					<a class="aUnthemed selected" href="{{.RelPermalink}}">{{ .LinkTitle }}</a>
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	</p>
+{{ end }}

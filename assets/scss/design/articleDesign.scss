@@ -1,0 +1,72 @@
+article {
+
+	// Titles
+	section.title {
+		h1 {
+			margin: 0;
+			word-break: break-word; // Not nice, but it's either this or decrease font size for mobile
+			+ .subtitle {
+				margin: 0 0 1.2em;
+			}
+		}
+	}
+	section.list {
+		.listTitle {
+			margin-bottom: 0;
+		}
+		.subtitle {
+			margin: 0 0 1em;
+		}
+	}
+
+	section.title.withImage {
+		text-shadow: var(--dark-background-colour-alt) 0px 0px 10px;
+		color: var(--dark-text-colour);
+		.titleImg {
+			filter: var(--filter-light);
+		}
+		// Unify themes
+		span.img {
+			background-color: var(--dark-text-colour);
+		}
+		a, a:visited {
+			color: var(--dark-link-colour);
+			&:hover {
+				color: var(--dark-link-colour-hover);
+			}
+			&:active {
+				color: var(--dark-link-colour-active);
+			}
+		}
+	}
+
+	// Images
+	/// Image caption
+	figure {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		figcaption {
+			align-self: end;
+		}
+	}
+
+	// Heading anchor link
+	h1, h2, h3, h4, h5 {
+		&:hover > .headingAnchor span.img {
+			background-color: var(--hash-colour-parent-hover);
+		}
+		& > .headingAnchor {
+			font-size: 1.6rem;
+			span.img {
+				background-color: var(--hash-colour);
+				vertical-align: text-top;
+			}
+			&:hover, &:focus {
+				span.img {
+					background-color: var(--hash-colour-hover);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+@use 'design/basicDesign';
+@use 'design/asideDesign';
+@use 'design/articleDesign';
+@use 'design/fancy';
+
+// Body
+body {
+	background-color: var(--body-background-colour);
+	color: var(--text-colour);
+	font-family: var(--font-families);
+}
+
+// Transition colours
+/*body, header,
+tr, th, td,
+pre code, code,
+.button, button,
+.aUnthemed, .selected, span.img {
+	transition-property: color, background-color, border-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}*/

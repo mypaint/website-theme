@@ -1,0 +1,47 @@
+// Header
+header {
+	background-color: transparent;
+	backdrop-filter: var(--filter-heavy);
+}
+
+// Main
+a.headingAnchor {
+	display: none;
+}
+
+// Section
+section.index {
+	img.background {
+		filter: var(--section-filter);
+	}
+	div.container {
+		backdrop-filter: var(--container-filter);
+	}
+	div.artist {
+		text-shadow: var(--artist-shadow);
+	}
+}
+
+// Downloader
+div.osDownload {
+	a.download.large {
+		span.main {
+			font-size: 140%;
+			font-weight: bold;
+		}
+		span.img {
+			font-size: 140%;
+		}
+	}
+	.iconButtons {
+		a.download.small span.img {
+			font-size: 120%;
+		}
+	}
+}
+
+.linux #osSelect #Linux,
+.macos #osSelect #MacOS,
+.windows #osSelect #Windows {
+	color: var(--link-colour);
+}

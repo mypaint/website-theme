@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.LanguageCode }}">
+	<head>
+		{{ partialCached "head/head.html" . }}
+		{{ partialCached "head/javascript.html" . }}
+		{{ partial "head/metadata.html" . }}
+		{{ block "headExtra" . }}{{ end }}
+		<title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+	</head>
+	<body>
+		<header>
+			<a id="skipContent" href="#mainContent">Skip to main content</a> 
+			{{ partialCached "cached/header.html" . }}
+		</header>
+		<main>
+			<aside>
+				<div id="asideSticky">
+					{{ block "aside" . }}{{ end }}
+				</div>
+			</aside>
+			<article id="mainContent">{{ block "article" . }}{{ end }}</article>
+		</main>
+		<footer>{{ partialCached "cached/footer.html" . }}</footer>
+		{{ partial "head/mermaid.html" . }}
+	</body>
+</html>

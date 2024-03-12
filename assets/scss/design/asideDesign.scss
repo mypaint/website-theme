@@ -1,0 +1,38 @@
+// Aside
+aside section,
+aside nav {
+	margin-bottom: 2em;
+	h5, .h5 {
+		font-style: normal;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	h5, p {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 0.4em;
+	}
+	> details {
+		> ul, > p {
+			margin: 0 0 0 1em;
+		}
+	}
+	// Unordered lists
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+	li {
+		> ul {
+			padding-left: 1rem;
+		}
+		> details > ul {
+			padding-left: 1.2rem;
+		}
+	}
+	summary + ul > li:first-child {
+		margin-top: 0;
+	}
+}

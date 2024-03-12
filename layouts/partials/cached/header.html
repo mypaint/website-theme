@@ -1,0 +1,18 @@
+<nav>
+	<div class="headerNavItem headerNavSmall" id="headerNavMenu">
+		<button class="aUnthemed" title="Open menu">
+			<span class="aUnthemed img inline" style='mask-image:url({{ (resources.Get "icons/menu.svg").RelPermalink }})' alt="Toggle menu"></span>
+		</button>
+	</div>
+	{{ range .Site.Menus.main }}
+	<div class="headerNavItem{{ if eq .Identifier "homepage" }} headerNavSmall" id="headerNavLogo{{ end }}">
+			<a class="aUnthemed" href="{{ .URL }}" title="{{ .Title }}">
+				{{ if eq .Identifier "homepage" }}
+					<span class="aUnthemed img" style='mask-image:url({{ (resources.Get "images/mypaint/logo.svg").RelPermalink }})' alt="Toggle menu"></span>
+				{{ else }}
+					{{ .Name }}
+				{{ end }}
+			</a>
+		</div>
+	{{ end }}
+</nav>

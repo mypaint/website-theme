@@ -1,0 +1,34 @@
+{{ if and .BundleType (.Resources.Get "index.jpg") }}
+	<section class="title withImage">
+		{{ with .Resources.Get "index.jpg" }}
+			<div class="titleImg" style="background-image:url({{ .RelPermalink }})"{{ with $.Params.imgAlt }} alt="{{ . }}"{{ end }}></div>
+			<div class="titleText">
+				{{ partial "article/titleBlock.html" $ }}
+			</div>
+	</section>
+{{ end }}
+{{ else }}
+	<section class="title">
+		{{ partial "article/titleBlock.html" . }}
+	</section>
+{{ end }}
+
+{{ if and .IsSection (not .Params.hideSummary) }}
+	{{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+{{ end }}
+
+<section class="content">
+	{{ .Content }}
+</section>
+
+{{ if or .NextInSection .PrevInSection }}
+	<nav id="pageTurner">
+		{{ with .NextInSection }}
+			<a class="button secondary" id="nextInSection" href="{{ .RelPermalink }}">Prev: {{ .Title }}</a>
+		{{ end }}
+		{{ with .PrevInSection }}
+			<a class="button secondary" id="prevInSection" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>
+		{{ end }}
+	</nav>
+{{ end }}
+

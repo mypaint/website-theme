@@ -1,0 +1,33 @@
+<nav id="sectionNav">
+	<details>
+		<summary class="h5"><a class="aUnthemed" href="{{ .rootSection.Permalink }}">
+				{{ .rootSection.Title  }}
+		</a></summary>
+		<ul>
+			{{ partial "sectionNavItems.html" (dict "currPage" .currPage "dirPages" .rootSection.Pages) }}
+		</ul>
+	</details>
+</nav>
+
+{{ define "partials/sectionNavItems.html" }}
+	{{ range .dirPages.ByTitle }}
+		{{ $scopeIsCurr := (eq $.currPage .Page) }}
+		{{ $sectionIsDescendant := ($.currPage.IsDescendant .Page) }}
+		{{ if .IsSection }} 
+			<li>
+				<details{{if or $sectionIsDescendant $scopeIsCurr }} open=""{{ end }}>
+					<summary>
+						<a class="aUnthemed {{if $scopeIsCurr }} selected{{ end }}" href="{{ .RelPermalink }}">{{- .Title -}}</a>
+					</summary>
+					<ul>
+						{{ partial "sectionNavItems" (dict "currPage" $.currPage "dirPages" .Pages) }}
+					</ul>
+				</details>
+			</li>
+		{{ else }}
+			<li>
+				<a class="aUnthemed {{if $scopeIsCurr }}  selected{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</li>
+		{{ end }}
+	{{ end }}
+{{ end }}
