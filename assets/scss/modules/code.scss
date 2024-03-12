@@ -1,44 +1,6 @@
-@mixin lightTheme {
-	--code-blue: #2D7CBE;
-	--code-green: #4D7133;
-	--code-grey: #676B74;
-	--code-orange: #d19a66; // Not changed
-	--code-purple: #9248A8;
-	--code-red: #A1454C;
-	--code-teal: #2F7A83;
-	--code-yellow: #796634;
+code {
+	color: var(--text-colour-alt);
 }
-
-@mixin darkTheme {
-	--code-blue: #61afef;
-	--code-green: #98c379;
-	--code-grey: #80858F;
-	--code-orange: #d19a66;
-	--code-purple: #c678dd;
-	--code-red: #e06c75;
-	--code-teal: #56b6c2;
-	--code-yellow: #e5c07b;
-}
-
-@media (prefers-color-scheme: light) {
-	.systemTheme:root {
-		@include lightTheme;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.systemTheme:root {
-		@include darkTheme;
-	}
-}
-
-.darkTheme:root {
-	@include darkTheme
-}
-.lightTheme:root {
-	@include lightTheme;
-}
-
 .chroma { // PreWrapper
 	.x, // Other
 	.err, // Error
