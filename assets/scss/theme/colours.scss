@@ -24,8 +24,10 @@
 	--alt-colour-2: var(--light-alt-colour-2);
 	--alt-colour-3: var(--light-alt-colour-3);
 	--alt-colour-1-hex: ##ebebeb;
+	// Text
 	--text-colour: #{$gray-9};
-	--text-colour-alt: #{$gray-7};
+	--text-colour-alt-1: #{$gray-8};
+	--text-colour-alt-2: #{$gray-7};
 	// Links
 	--link-colour: #{$blue-7};
 	--link-colour-hover: #{$blue-8};
@@ -35,7 +37,7 @@
 	--link-colour-visited-active: #{$violet-9};
 	// Hash
 	--hash-colour-parent-hover: #{$gray-5};
-	--hash-colour-hover: var(--text-colour-alt);
+	--hash-colour-hover: var(--text-colour-alt-2);
 	// Chroma
 	--code-blue: #2D7CBE;
 	--code-green: #4D7133;
@@ -54,8 +56,10 @@
 	--alt-colour-2: rgba(255,255,255,0.075);
 	--alt-colour-3: rgba(255,255,255,0.1);
 	--alt-colour-1-hex: #222222;
+	// Text
 	--text-colour: var(--dark-text-colour);
-	--text-colour-alt: #{$gray-5};
+	--text-colour-alt-1: #{$gray-2};
+	--text-colour-alt-2: #{$gray-5};
 	// Links
 	--link-colour: var(--dark-link-colour);
 	--link-colour-hover: var(--dark-link-colour-hover);

@@ -75,8 +75,8 @@ li {
 // Blockquotes
 blockquote {
 	padding-left: 1em;
-	border-left: 2px solid var(--text-colour-alt);
-	color: var(--text-colour-alt);
+	border-left: 2px solid var(--text-colour-alt-2);
+	color: var(--text-colour-alt-2);
 }
 
 // Tables
@@ -91,7 +91,7 @@ table {
 	th, td {
 		border-style: solid;
 		border-width: 0;
-		border-color: var(--text-colour-alt);
+		border-color: var(--text-colour-alt-2);
 	}
 	th {
 		border-bottom-width: 3px;
@@ -108,23 +108,6 @@ table {
 			background-color: var(--alt-colour-1);
 		}
 	}
-}
-
-// Code
-code {
-	font-family: "Fira Code", monospace;
-	font-size: 80%;
-	background-color: var(--alt-colour-1);
-}
-
-pre code {
-	display: block;
-	overflow-x: auto;
-	padding: 1em;
-}
-
-:not(pre) > code {
-	padding: 0.1em 0.2em;
 }
 
 // Buttons

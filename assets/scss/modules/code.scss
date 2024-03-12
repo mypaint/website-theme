@@ -1,6 +1,20 @@
 code {
-	color: var(--text-colour-alt);
+	font-family: "Fira Code", monospace;
+	font-size: 80%;
+	background-color: var(--alt-colour-1);
+	color: var(--text-colour-alt-1);
 }
+
+pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 1em;
+}
+
+:not(pre) > code {
+	padding: 0.1em 0.2em;
+}
+
 .chroma { // PreWrapper
 	.x, // Other
 	.err, // Error
