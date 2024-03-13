@@ -1,13 +1,12 @@
 {{ $output := "" }}
-{{ with (.Get "src") }}
-	{{ if (findRE `https?://` .) }}
-			{{ $output = (resources.GetRemote .).RelPermalink }}
-	{{ else if $.Page.Resources.Get . }}
-		{{ $output = ($.Page.Resources.Get .).RelPermalink }}
-	{{ else if resources.Get . }}
-		{{ $output = (resources.Get .).RelPermalink }}
-	{{ else }}
-		{{ errorf "\"src\" points to path %q which does not exist. See %s" . $.Position }}
-	{{ end }}
+{{ if (findRE `https?://` .src) }}
+	{{ $output = (resources.GetRemote .src).RelPermalink }}
+{{ else if .context.Page.Resources.Get .src }}
+	{{ $output = (.context.Page.Resources.Get .src).RelPermalink }}
+{{ else if resources.Get .src }}
+	{{ $output = (resources.Get .src).RelPermalink }}
+{{ else if .optional }}
+{{ else }}
+	{{ errorf "\"src\" points to path %q which does not exist. See %s" .src .context.Position }}
 {{ end }}
 {{ return $output }}

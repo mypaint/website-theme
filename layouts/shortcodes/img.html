@@ -4,7 +4,7 @@
 {{ $height := "" }}
 
 {{ if (.Get "src") }}
-	{{ $src = partial "get/src.html" . }}
+	{{ $src := partial "get/src.html" (dict "context" . "src" (.Get "src")) }}
 {{ else }}
 	{{ errorf "\"src\" must be populated. See %s" $src .Position }}
 {{ end }}

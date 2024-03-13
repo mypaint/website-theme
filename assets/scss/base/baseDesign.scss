@@ -45,13 +45,16 @@ a {
 		font-size: valueInMap($headings, size, $i);
 		font-weight: valueInMap($headings, weight, $i);
 		font-style: valueInMap($headings, style, $i);
-		margin: 1.25em 0 0.25em;
+		margin: 1.25em 0 0.1em;
 		.title + & {
-			margin-top: 0.25em;
+			margin-top: 0.2em;
+		}
+		& + p {
+			margin-top: 0.1em;
 		}
 	}
 	@for $n from 1 through 5 {
-		h#{$i} + h#{$n} {
+		h#{$i} + h#{$n}, .h#{$i} + .h#{$n} {
 			margin-top: 0.25em;
 		}
 	}

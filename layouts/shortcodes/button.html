@@ -1,6 +1,6 @@
 {{ $href := partial "get/href.html" (dict "context" . "href" (.Get "href")) }}
 {{ $content := (.Get "content") }}
-{{ $src := partial "get/src.html" . }}
+{{ $src := partial "get/src.html" (dict "context" . "src" (.Get "src") "optional" true) }}
 
 {{ with (.Get "relref") }}
 	{{ $href = $.RelRef (dict "path" .) }}

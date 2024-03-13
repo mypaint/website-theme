@@ -13,6 +13,10 @@ a.headingAnchor {
 section.index {
 	img.background {
 		filter: var(--section-filter);
+		object-fit: cover;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 	div.container {
 		backdrop-filter: var(--container-filter);
