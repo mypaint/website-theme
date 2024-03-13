@@ -17,10 +17,11 @@
 {{ end }}
 
 <section class="index {{ $direction }}">
-	<img class="background"
-		 src="{{ $src }}"
-		 alt="{{ $alt }}"
-		 style="background-image:url({{ $srclow }});">
+	<div class="background"
+		 style="background-image:
+				url({{ $src }})
+				{{- if (ne $srclow "") }}, url({{ $srclow }}){{ end -}};"
+		 alt="{{ $alt }}"></div>
 	<div class="container">
 		{{ .Inner }}
 	</div>
