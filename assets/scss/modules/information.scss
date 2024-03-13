@@ -1,0 +1,17 @@
+div.information {
+	display: block;
+	background-color: var(--alt-colour-1);
+	color: var(--yellow);
+	padding: 1em 1.4em;
+	.title {
+		font-weight: bold;
+		font-style: normal;
+		margin: 0;
+	}
+	:first-child + * {
+		margin-top: 0;
+	}
+	:last-child {
+		margin-bottom: 0;
+	}
+}
