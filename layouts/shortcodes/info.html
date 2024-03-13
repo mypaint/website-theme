@@ -1,4 +1,15 @@
-<div class="information">
-	<h5 class="title">Information</h5>
+{{ $type := .Get "type" }}
+{{ $typeWarning := eq $type "warning" }}
+
+<div class="information {{ if $typeWarning }}typeWarning{{ end }}">
+	<p class="h5 title">
+		{{ if $typeWarning }}
+			<span class="img inline" style='mask-image:url({{ (resources.Get "icons/alert-outline.svg").RelPermalink }})' alt=""></span>
+			Warning
+		{{ else }}
+			<span class="img inline" style='mask-image:url({{ (resources.Get "icons/information-outline.svg").RelPermalink }})' alt=""></span>
+			Information
+		{{ end }}
+	</p>
 	<p>{{ .Inner }}</p>
 </div>

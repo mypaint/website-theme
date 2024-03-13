@@ -7,11 +7,20 @@ div.information {
 		font-weight: bold;
 		font-style: normal;
 		margin: 0;
+		span.img {
+			background-color: var(--yellow);
+		}
 	}
 	:first-child + * {
 		margin-top: 0;
 	}
 	:last-child {
 		margin-bottom: 0;
+	}
+	&.typeWarning {
+		color: var(--red);
+		.title span.img {
+			background-color: var(--red);
+		}
 	}
 }
