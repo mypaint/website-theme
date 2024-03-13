@@ -38,6 +38,9 @@
 	// Hash
 	--hash-colour-parent-hover: #{$gray-5};
 	--hash-colour-hover: var(--text-colour-alt-2);
+	// Colours
+	--yellow: #{$yellow-9};
+	--red: #{$red-9};
 	// Chroma
 	--code-blue: #2D7CBE;
 	--code-green: #4D7133;
@@ -70,6 +73,9 @@
 	// Hash
 	--hash-colour-parent-hover: #{$gray-6};
 	--hash-colour-hover: #{$gray-4};
+	// Colours
+	--yellow: #{$yellow-4};
+	--red: #{$red-6};
 	// Chroma
 	--code-blue: #61afef;
 	--code-green: #98c379;
@@ -79,25 +85,6 @@
 	--code-red: #e06c75;
 	--code-teal: #56b6c2;
 	--code-yellow: #e5c07b;
-}
-
-// Colour classes
-@mixin lightHighlight {
-	.yellow {
-		color: $yellow-9;
-	}
-	.red {
-		color: $red-9;
-	}
-}
-
-@mixin darkHighlight {
-	.yellow {
-		color: $yellow-4;
-	}
-	.red {
-		color: $red-6;
-	}
 }
 
 // Generate the themes
@@ -113,7 +100,6 @@
 		&:root {
 			@include lightTheme;
 		}
-		@include lightHighlight;
 		#systemThemeButton {
 			display: inline;
 		}
@@ -125,7 +111,6 @@
 		&:root {
 			@include darkTheme;
 		}
-		@include darkHighlight;
 		#systemThemeButton {
 			display: inline;
 		}
@@ -139,7 +124,6 @@
 	&:root {
 		@include lightTheme;
 	}
-	@include lightHighlight;
 }
 .darkTheme {
 	#darkThemeButton {
@@ -148,5 +132,4 @@
 	&:root {
 		@include darkTheme;
 	}
-	@include darkHighlight;
 }
