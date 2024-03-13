@@ -28,7 +28,6 @@
 {{ end }}
 
 
-{{ $src = $src | safeHTMLAttr }}
 {{ $alt := (printf "alt=%q" (.Get "alt")) | safeHTMLAttr }}
 {{ $classes = (printf "class=%q" (trim $classes " ")) | safeHTMLAttr }}
 {{ $style := printf "style=%q" (trim (print $width $height) " ") | safeHTMLAttr }}
@@ -36,7 +35,7 @@
 
 {{ if (.Get "caption") }}
 	<figure {{ $classes }} {{ $style }}>
-		<img {{ $src }} {{ $alt }}/>
+		<img src="{{ $src }}" {{ $alt }}/>
 		<figcaption>{{ .Get "caption" }}</figcaption>
 	</figure>
 {{ else }}
