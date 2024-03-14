@@ -6,12 +6,9 @@
 	{{ $href = $.RelRef (dict "path" .) }}
 {{ end }}
 
-{{ if ne $src "" }}
-	{{ $src = (printf "style=mask-image:url(%s)" $src) | safeHTMLAttr }}
-{{ end }}
-
 <a class="button secondary" href="{{ $href }}">
-	{{ if ne $src "" }}
+	{{ if $src }}
+		{{ $src := printf "style=mask-image:url(%q)" $src | safeHTMLAttr }}
 		<span class="aUnthemed img inline" {{ $src }} alt=""></span>
 	{{ end }}
 	{{ $content }}

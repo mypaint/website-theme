@@ -1,19 +1,13 @@
 {{ $classes := "imgInsert " }}
-{{ $src := "" }}
+{{ $src := printf "src=%q" (partial "get/src.html" (dict "context" . "src" (.Get "src"))) | safeHTMLAttr }}
 {{ $width := "" }}
 {{ $height := "" }}
 
-{{ if (.Get "src") }}
-	{{ $src := partial "get/src.html" (dict "context" . "src" (.Get "src")) }}
-{{ else }}
-	{{ errorf "\"src\" must be populated. See %s" $src .Position }}
-{{ end }}
-
 {{ with (.Get "width") }}
-	{{ $width = printf "width:100%%; max-width:%s" . }}
+	{{ $width = printf "width:%s;" . }}
 {{ end }}
 {{ with (.Get "height") }}
-	{{ $width = printf "height:100%%; max-height:%s" . }}
+	{{ $width = printf "height:%s;" . }}
 {{ end }}
 
 
@@ -35,7 +29,7 @@
 
 {{ if (.Get "caption") }}
 	<figure {{ $classes }} {{ $style }}>
-		<img src="{{ $src }}" {{ $alt }}/>
+		<img {{ $src }} {{ $alt }}/>
 		<figcaption>{{ .Get "caption" }}</figcaption>
 	</figure>
 {{ else }}

@@ -1,4 +1,4 @@
-{{ $src := partial "get/src.html" (dict "context" . "src" (.Get "src")) }}
+{{ $src := printf "url(%q)" (partial "get/src.html" (dict "context" . "src" (.Get "src"))) | safeCSS }}
 {{ $srclow := partial "get/src.html" (dict "context" . "src" (.Get "srclow") "optional" true) }}
 {{ $alt := .Get "alt" }}
 {{ $direction := "" }}
@@ -19,8 +19,10 @@
 <section class="index {{ $direction }}">
 	<div class="background"
 		 style="background-image:
-				url({{ $src }})
-				{{- if (ne $srclow "") }}, url({{ $srclow }}){{ end -}};"
+				{{ $src }}
+				{{- with $srclow  }}
+					, url({{ . }})
+				{{ end -}};"
 		 alt="{{ $alt }}"></div>
 	<div class="container">
 		{{ .Inner }}

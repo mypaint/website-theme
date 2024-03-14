@@ -6,6 +6,7 @@
 {{ else if resources.Get .src }}
 	{{ $output = (resources.Get .src).RelPermalink }}
 {{ else if .optional }}
+	{{ $output = false }}
 {{ else }}
 	{{ errorf "\"src\" points to path %q which does not exist. See %s" .src .context.Position }}
 {{ end }}
