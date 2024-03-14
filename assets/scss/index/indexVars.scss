@@ -51,5 +51,11 @@
 		aside > div {
 			backdrop-filter: var(--filter-heavy);
 		}
+		section.index {
+			div.container,
+			div.artist {
+				visibility: hidden;
+			}
+		}
 	}
 }
