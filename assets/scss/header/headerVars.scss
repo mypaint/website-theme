@@ -2,10 +2,11 @@
 
 :root {
 	--header-position: initial;
-	--header-height: 4.5rem;
+	--header-height: 4rem;
 	--header-nav-gap: 5rem;
 	--header-nav-columns: repeat(5, 6rem);
 	--header-menu-display: none;
+	--header-scroll-padding: 0;
 }
 
 @media screen and (max-width: $medium-screen) {
@@ -19,6 +20,7 @@
 		--header-position: sticky;
 		--header-menu-display: block;
 		--header-nav-columns: 1fr 6rem 1fr;
+		--header-scroll-padding: calc(var(--header-height) + 0.5rem);
 		--article-with-image-padding: var(--main-padding);
 	}
 }

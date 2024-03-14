@@ -23,7 +23,7 @@ aside {
 @media screen and (max-width: $small-screen) {
 	.asideOpen aside > div { // Clean this up
 		// Display
-		z-index: 99;
+		z-index: var(--z-index-high);
 		// Positioning
 		left: 0;
 		// Layout

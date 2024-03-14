@@ -1,13 +1,16 @@
 header {
-	// Positioning
+	// Display
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// Position
 	position: var(--header-position);
-	z-index: 99;
+	z-index: var(--z-index-high);
 	top: 0;
-	// Form
-	display: block;
+	// Layout
 	height: var(--header-height);
 	width: 100vw;
-	padding: 1.5rem var(--body-side-padding);
+	padding: 0 var(--body-side-padding);
 	// Design?
 	background-color: var(--body-background-colour);
 
@@ -26,7 +29,7 @@ header {
 	// Skip to content
 	#skipContent {
 		position: absolute;
-		z-index: 99;
+		z-index: var(--z-index-highest);
 		top: 1rem;
 		left: 1rem;
 		display: block;

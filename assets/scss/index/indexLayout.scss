@@ -9,28 +9,31 @@ main {
 	margin: 0;
 	& > article {
 		max-width: none;
-		& > section.index:first-child {
-			padding-top: 5.5rem;
-		}
 	}
 }
 
 // Section
 section.index {
-	position: relative;
+	// Display
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	row-gap: 0.4rem;
+	justify-content: center;
+	align-items: center;
+	// Position
+	position: relative;
+	// Layout
 	padding: var(--section-padding);
 	min-height: 100vh;
-	align-items: center;
+
 	&.start {
 		align-items: start;
 	} &.end {
 		align-items: end;
+	} &:first-child {
+		padding-top: var(--header-height);
 	}
-	
+
 	div.background {
 		z-index: -1;
 		position: absolute;

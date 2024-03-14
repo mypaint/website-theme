@@ -4,8 +4,9 @@
 	// Global
 	--base-padding: 1rem var(--body-side-padding);
 	--gap: 0.3rem;
+	--z-index-high: 98;
+	--z-index-highest: 99;
 	// Body
-	--body-scroll-padding: 0;
 	--body-side-padding: 3rem;
 	--article-with-image-padding: 0;
 	// Main
@@ -35,8 +36,6 @@
 
 @media screen and (max-width: $small-screen) {
 	:root {
-		// Body
-		--body-scroll-padding: 4.5rem;
 		// Main
 		--main-with-image-padding: 0;
 		--main-columns: 0 1fr 0;
