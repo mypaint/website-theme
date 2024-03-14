@@ -61,6 +61,7 @@ div.osDownload {
 			"icon subtitle";
 		align-items: center;
 		column-gap: 1em;
+		height: 5rem;
 		.img {
 			grid-area: icon;
 		}
@@ -75,6 +76,7 @@ div.osDownload {
 		display: grid;
 		grid-auto-columns: 3em;
 		gap: var(--gap);
+		height: 5rem;
 		a.download.small {
 			display: flex;
 			justify-content: center;
