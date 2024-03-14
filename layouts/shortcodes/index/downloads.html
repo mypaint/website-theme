@@ -40,8 +40,15 @@
 		</div>
 	</div>
 	<div id="downloadIncompatible" class="osDownload">
-		<p>Your device appears to be incompatible with MyPaint.<br>
-		Please select a download for one of the following operating systems:</p>
+		<div class="information">
+			<p class="h5 title">
+				<span class="img inline" style='mask-image:url({{ (resources.Get "icons/information-outline.svg").RelPermalink }})' alt=""></span>
+				Information
+			</p>
+			<p>
+				Your device appears to be incompatible with MyPaint. Please select a download for one of the following operating systems:
+			</p>
+		</div>
 	</div>
 	<div id="osSelect">
 		<button id="Linux" class="aUnthemed">Linux</button> |
@@ -52,21 +59,21 @@
 </section>
 
 {{ define "partials/largeDownload.html" }}
-	<a class="button download large secondary"
-		href="{{ .href | safeURL }}">
-		<span class="aUnthemed img inline"
-			  style='mask-image:url({{ (resources.Get  .src).RelPermalink }})'
-			  alt=""></span>
-		<span class="main">Download MyPaint</span>
-		<span class="sub">{{ .subtitle  }}</span>
-	</a>
+<a class="button download large secondary"
+   href="{{ .href | safeURL }}">
+	<span class="aUnthemed img inline"
+		  style='mask-image:url({{ (resources.Get  .src).RelPermalink }})'
+		  alt=""></span>
+	<span class="main">Download MyPaint</span>
+	<span class="sub">{{ .subtitle  }}</span>
+</a>
 {{ end }}
 {{ define "partials/iconButton.html" }}
-	<a
+<a
 		class="button download secondary small"
 		href="{{ .href | safeURL }}"
 		title="{{ .subtitle }}"
 		style="grid-area:{{ .area | safeCSS }}">
-		<span class="aUnthemed img inline" style='mask-image:url({{ (resources.Get  .src).RelPermalink }})' alt=""></span>
-	</a>
+	<span class="aUnthemed img inline" style='mask-image:url({{ (resources.Get  .src).RelPermalink }})' alt=""></span>
+</a>
 {{ end }}
