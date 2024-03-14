@@ -1,4 +1,9 @@
 // Aside
+aside {
+	> div {
+		background-color: var(--aside-background-colour);
+	}
+}
 aside section,
 aside nav {
 	margin-bottom: 2em;

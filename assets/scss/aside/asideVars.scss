@@ -1,0 +1,27 @@
+@import 'vars';
+
+:root {
+	--aside-position: sticky;
+	--aside-display: block;
+	--aside-top: 3rem;
+	--aside-background-colour: transparent;
+	--site-nav-display: none;
+}
+
+@media screen and (max-width: $small-screen) {
+	:root {
+		--aside-display: none;
+	}
+	.asideOpen {
+		&:root {
+			--aside-display: block;
+			--aside-position: fixed;
+			--aside-top: var(--header-height);
+			--aside-background-colour: var(--body-background-colour);
+			--site-nav-display: block;
+		}
+		body {
+			overflow-y: hidden;
+		}
+	}
+}

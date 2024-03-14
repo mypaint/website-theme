@@ -1,11 +1,15 @@
 @import 'vars';
 // Vars
 :root {
+	// Header
 	--header-position: absolute;
+	// Aside
 	--aside-display: none;
+	// Section
 	--section-padding: 2rem;
 	--section-filter: none;
 	--background-size: 100%;
+	// Container
 	--container-max-width: 30rem;
 	--container-padding: 4rem 2rem;
 	--container-filter: var(--filter-heavy);
@@ -23,9 +27,14 @@
 
 @media screen and (max-width: $small-screen) {
 	:root {
+		// Header
 		--header-position: fixed;
+		// Aside
+		--aside-background-colour: transparent;
+		// Section
 		--section-padding: 0;
 		--section-filter: var(--filter-heavy);
+		// Container
 		--container-max-width: unset;
 		--container-padding: 0 var(--body-side-padding);
 		--container-filter: none;
@@ -33,5 +42,13 @@
 	}
 	section.index {
 		align-items: center!important;
+	}
+	.asideOpen {
+		&:root {
+			--aside-background-colour: transparent;
+		}
+		aside > div {
+			backdrop-filter: var(--filter-heavy);
+		}
 	}
 }

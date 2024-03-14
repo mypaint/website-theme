@@ -6,24 +6,19 @@ $small-screen: 45rem;
 $smaller-screen: 30rem;
 
 :root {
-	// Layout
+	// Global
+	--base-padding: 1rem var(--body-side-padding);
+	--gap: 0.3rem;
+	// Body
 	--body-scroll-padding: 0;
 	--body-side-padding: 3rem;
-	--base-padding: 1rem var(--body-side-padding);
-	--main-padding: var(--base-padding);
-	--main-with-image-padding: var(--main-padding);
-	--footer-padding: var(--base-padding);
 	--article-with-image-padding: 0;
-	--gap: 0.3rem;
-	/// Header
-	--header-position: initial;
-	--header-nav-gap: 5rem;
-	--header-nav-columns: repeat(5, 6rem);
-	--header-menu-display: none;
-	/// Main
+	// Main
+	--main-padding: var(--base-padding);
 	--main-columns: minmax(16rem, 1fr) 4fr 1fr;
-	--aside-display: block;
-
+	--main-with-image-padding: var(--main-padding);
+	// Footer
+	--footer-padding: var(--base-padding);
 	// Design
 	--filter-light: brightness(50%) blur(0.2rem);
 	--filter-heavy: brightness(50%) blur(1rem);
@@ -40,20 +35,16 @@ $smaller-screen: 30rem;
 @media screen and (max-width: $medium-screen) {
 	:root {
 		--body-side-padding: 2rem;
-		--header-nav-gap: 3rem;
 	}
 }
 
-@media screen and (max-width: $small-screen){
+@media screen and (max-width: $small-screen) {
 	:root {
+		// Body
 		--body-scroll-padding: 4.5rem;
+		// Main
 		--main-with-image-padding: 0;
-		--article-with-image-padding: var(--main-padding);
-		--header-position: sticky;
-		--header-menu-display: block;
-		--header-nav-columns: 1fr 6rem 1fr;
 		--main-columns: 0 1fr 0;
-		--aside-display: none;
 		// Design
 		--hash-colour: var(--hash-colour-parent-hover);
 	}

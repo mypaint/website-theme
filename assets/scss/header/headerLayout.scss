@@ -5,7 +5,7 @@ header {
 	top: 0;
 	// Form
 	display: block;
-	height: 4.5rem;
+	height: var(--header-height);
 	width: 100vw;
 	padding: 1.5rem var(--body-side-padding);
 	// Design?

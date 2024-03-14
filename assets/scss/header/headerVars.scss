@@ -1,0 +1,24 @@
+@import 'vars';
+
+:root {
+	--header-position: initial;
+	--header-height: 4.5rem;
+	--header-nav-gap: 5rem;
+	--header-nav-columns: repeat(5, 6rem);
+	--header-menu-display: none;
+}
+
+@media screen and (max-width: $medium-screen) {
+	:root {
+		--header-nav-gap: 3rem;
+	}
+}
+
+@media screen and (max-width: $small-screen) {
+	:root {
+		--header-position: sticky;
+		--header-menu-display: block;
+		--header-nav-columns: 1fr 6rem 1fr;
+		--article-with-image-padding: var(--main-padding);
+	}
+}
