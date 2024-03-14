@@ -1,9 +1,4 @@
-// This fille covers all the variables for reactive design in the MyPaint website
-
-$large-screen: 70rem;
-$medium-screen: 60rem;
-$small-screen: 45rem;
-$smaller-screen: 30rem;
+@import 'base/screenSizes';
 
 :root {
 	// Global

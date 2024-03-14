@@ -1,4 +1,4 @@
-@import 'vars';
+@import 'base/screenSizes';
 
 aside {
 	width: 100%;
@@ -21,23 +21,21 @@ aside {
 }
 
 @media screen and (max-width: $small-screen) {
-	.asideOpen {
-		aside > div { // Clean this up
-			// Display
-			z-index: 99;
-			// Positioning
-			left: 0;
-			// Layout
-			max-height: calc(100vh - var(--header-height));
-			height: 100%;
-			width: 100%;
-			margin: 0;
-			padding: 0 var(--body-side-padding);
-			// Design
-			font-size: 110%;
-			h4, .h4 {
-				font-size: 1.4em;
-			}
+	.asideOpen aside > div { // Clean this up
+		// Display
+		z-index: 99;
+		// Positioning
+		left: 0;
+		// Layout
+		max-height: calc(100vh - var(--header-height));
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0 var(--body-side-padding);
+		// Design
+		font-size: 110%;
+		h4, .h4 {
+			font-size: 1.4em;
 		}
 	}
 }
