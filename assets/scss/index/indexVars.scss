@@ -7,10 +7,11 @@
 	// Aside
 	--aside-display: none;
 	// Section
-	--section-padding: 2rem;
+	--section-vertical-padding: 2rem;
+	--section-horizontal-padding: 2rem;
 	--section-filter: none;
-	--combi-flex-direction: row;
 	--background-size: 100%;
+	--section-combi-flex-direction: row;
 	// Container
 	--container-max-width: 30rem;
 	--container-padding: 4rem 2rem;
@@ -19,6 +20,7 @@
 		0 0 8px #000,
 		0 0 8px #000,
 		0 0 8px #000;
+	--container-combi-margin: 0;
 }
 // Colours
 .darkTheme:root {
@@ -29,7 +31,7 @@
 
 @media screen and (max-width: $medium-screen) {
 	:root {
-		--combi-flex-direction: column;
+		--section-combi-flex-direction: column;
 	}
 }
 @media screen and (max-width: $small-screen) {
@@ -39,13 +41,15 @@
 		// Aside
 		--aside-background-colour: transparent;
 		// Section
-		--section-padding: 0;
+		--section-vertical-padding: 4rem;
+		--section-horizontal-padding: 0;
 		--section-filter: var(--filter-heavy);
 		// Container
 		--container-max-width: unset;
 		--container-padding: 0 var(--body-side-padding);
 		--container-filter: none;
 		--artist-shadow: 0;
+		--container-combi-margin: 4rem;
 	}
 	section.index {
 		align-items: center!important;

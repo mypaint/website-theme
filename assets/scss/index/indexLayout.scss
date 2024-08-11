@@ -17,7 +17,7 @@ section.index {
 	display: flex;
 	position: relative;
 	align-items: center;
-	padding: var(--section-padding);
+	padding: var(--section-vertical-padding) var(--section-horizontal-padding);
 	min-height: 100vh;
 
 	div.background {
@@ -49,14 +49,17 @@ section.single.index {
 	} &.end {
 		align-items: end;
 	} &:first-child {
-		padding-top: calc(var(--header-height) + var(--section-padding));
+		padding-top: calc(var(--header-height) + var(--section-vertical-padding));
 	}
 }
 
 section.combi.index {
-	flex-direction: var(--combi-flex-direction);
+	flex-direction: var(--section-combi-flex-direction);
 	justify-content: space-around;
 	column-gap: 1rem;
+	div.container + div.container{
+		margin-top: var(--container-combi-margin);
+	}
 }
 
 // Downloader
