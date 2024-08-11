@@ -27,6 +27,11 @@
 	--alt-colour-3: rgba(0,0,0,0.3);
 }
 
+@media screen and (max-width: $medium-screen) {
+	:root {
+		--combi-flex-direction: column;
+	}
+}
 @media screen and (max-width: $small-screen) {
 	:root {
 		// Header
@@ -36,7 +41,6 @@
 		// Section
 		--section-padding: 0;
 		--section-filter: var(--filter-heavy);
-		--combi-flex-direction: column;
 		// Container
 		--container-max-width: unset;
 		--container-padding: 0 var(--body-side-padding);
