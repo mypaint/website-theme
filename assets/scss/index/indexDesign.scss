@@ -29,6 +29,11 @@ section.single.index {
 	}
 }
 
+section.combi.index {
+	background: rgb(0,0,0);
+	background: linear-gradient(42deg, rgba(41,0,47,1) 0%, rgba(105,43,0,1) 100%);
+}
+
 // Downloader
 div.osDownload {
 	a.download.large {
