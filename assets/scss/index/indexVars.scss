@@ -9,6 +9,7 @@
 	// Section
 	--section-padding: 2rem;
 	--section-filter: none;
+	--combi-flex-direction: row;
 	--background-size: 100%;
 	// Container
 	--container-max-width: 30rem;
@@ -35,6 +36,7 @@
 		// Section
 		--section-padding: 0;
 		--section-filter: var(--filter-heavy);
+		--combi-flex-direction: column;
 		// Container
 		--container-max-width: unset;
 		--container-padding: 0 var(--body-side-padding);

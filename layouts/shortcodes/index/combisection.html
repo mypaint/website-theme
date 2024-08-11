@@ -1,0 +1,14 @@
+{{ $direction := "" }}
+{{ with (.Get "direction") }}
+	{{ if eq . "start" }}
+		{{ $direction = "start" }}
+	{{ else if eq . "centre" }}
+		{{ $direction = "center" }}
+	{{ else if eq . "end" }}
+		{{ $direction = "end" }}
+	{{ end }}
+{{ end }}
+
+<section class="index combi {{ $direction }}">
+	{{ .Inner }}
+</section>

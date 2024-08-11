@@ -18,11 +18,14 @@ section.index {
 		background-position: center;
 		background-repeat: no-repeat;
 	}
-	div.container {
-		backdrop-filter: var(--container-filter);
-	}
 	div.artist {
 		text-shadow: var(--artist-shadow);
+	}
+}
+
+section.single.index {
+	div.container {
+		backdrop-filter: var(--container-filter);
 	}
 }
 
