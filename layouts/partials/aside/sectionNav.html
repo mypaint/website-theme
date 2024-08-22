@@ -10,7 +10,7 @@
 </nav>
 
 {{ define "partials/sectionNavItems.html" }}
-	{{ range .dirPages.ByTitle }}
+	{{ range .dirPages }}
 		{{ $scopeIsCurr := (eq $.currPage .Page) }}
 		{{ $sectionIsDescendant := ($.currPage.IsDescendant .Page) }}
 		{{ if .IsSection }} 
