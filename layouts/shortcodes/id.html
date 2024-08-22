@@ -1,2 +1,16 @@
 {{ $id := .Get 0 }}
-<span id={{ $id }}>{{ .Inner | markdownify }}</span>
+{{ $useMD := .Get 1 }}
+
+{{ with $useMD }}
+	{{ if not (eq . "nomd" "yesmd") }}
+		{{ errorf "The \"id\" shortcode's second parameter must be one of \"nomd\" or \"yesmd\". %s" $.Position }}
+	{{ end }}
+{{ end }}
+
+<span id={{ $id }}>
+	{{ if eq $useMD "nomd" }}
+		{{ .Inner }}
+	{{ else }}
+		{{ .Inner | markdownify }}
+	{{ end }}
+</span>
