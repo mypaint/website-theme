@@ -59,5 +59,6 @@ function setFavicon() {
 }
 
 function watchFavicon() {
+	setFavicon()
 	matchMedia.addListener(setFavicon)
 }
