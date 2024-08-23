@@ -1,0 +1,17 @@
+{{ $href := partial "get/href.html" (dict "context" . "href" (.Get "href")) }}
+{{ $title := (.Get "title") }}
+{{ $subtitle := (.Get "subtitle") }}
+{{ $src := partial "get/src.html" (dict "context" . "src" (.Get "src") "optional" true) }}
+
+{{ with (.Get "relref") }}
+	{{ $href = $.RelRef (dict "path" .) }}
+{{ end }}
+
+<a class="big button secondary" href="{{ $href }}">
+	{{ if $src }}
+		{{ $src := printf "style=mask-image:url(%q)" $src | safeHTMLAttr }}
+		<span class="aUnthemed img inline" {{ $src }} alt=""></span>
+	{{ end }}
+	<p class="h6 title">{{ $title }}</p>
+	<p>{{ $subtitle }}</p>
+</a>

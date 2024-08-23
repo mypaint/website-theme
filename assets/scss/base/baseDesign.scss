@@ -40,7 +40,7 @@ a {
 }
 
 // Headings
-@for $i from 1 through 5 {
+@for $i from 1 through 6 {
 	h#{$i}, .h#{$i} {
 		font-size: valueInMap($headings, size, $i);
 		font-weight: valueInMap($headings, weight, $i);

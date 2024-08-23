@@ -18,4 +18,12 @@
 			color: var(--link-colour-active);
 		}
 	}
+
+	&.big {
+		flex-direction: column;
+		align-items: flex-start;
+		> p {
+			margin: 0;
+		}
+	}
 }
