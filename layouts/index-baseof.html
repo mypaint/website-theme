@@ -10,7 +10,7 @@
 		{{ $style := resources.Get "scss/buildIndex.scss" | resources.ToCSS $styleOpts }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 		<title>{{ .Site.Title }}</title>
-		<link href="{{ .Site.Params.socialMastodon }}" rel="me">
+		<link href="{{ .Site.Params.social.Mastodon }}" rel="me">
 	</head>
 	<body>
 		<header>
