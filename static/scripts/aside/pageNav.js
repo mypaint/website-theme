@@ -65,7 +65,7 @@ function getIntersection(observed) {
 function watchHeadings() {
 	if (pageNavLinks.length > 0) {
 		for (const heading of headings) {
-			IntersectionObserver(getIntersection, {rootMargin: '0px 0px -95%'})
+			new IntersectionObserver(getIntersection, {rootMargin: '0px 0px -95%'})
 				.observe(heading)
 		}
 	}
