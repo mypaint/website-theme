@@ -14,7 +14,7 @@
 	--main-columns: minmax(16rem, 1fr) 4fr 1fr;
 	--main-with-image-padding: var(--main-padding);
 	// Footer
-	--footer-padding: var(--base-padding);
+	--footer-padding: 5rem var(--body-side-padding) 1rem;
 	// Design
 	--filter-light: brightness(50%) blur(0.2rem);
 	--filter-heavy: brightness(50%) blur(1rem);
