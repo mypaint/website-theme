@@ -86,11 +86,12 @@ blockquote {
 table {
 	display: block;
 	overflow-x: auto;
+	border-collapse: collapse;
+
 	td, th {
 		padding: 0.75em 1em;
 	}
 	// Borders
-	border-collapse: collapse;
 	th, td {
 		border-style: solid;
 		border-width: 0;
