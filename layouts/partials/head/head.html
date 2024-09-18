@@ -4,7 +4,7 @@
 
 <!-- Stylesheet -->
 {{ $styleOpts := (dict "transpiler" "dartsass" "targetPath" "main.css" "outputStyle" "compressed") }}
-{{ $style := resources.Get "scss/build.scss" | resources.ToCSS $styleOpts }}
+{{ $style := resources.Get "scss/build.scss" | css.Sass $styleOpts }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <!-- Icons -->

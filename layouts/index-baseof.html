@@ -7,7 +7,7 @@
 		<script defer="" src='{{ (resources.Get "scripts/main.js").RelPermalink }}' type="module"></script>
 		<!-- Stylesheet -->
 		{{ $styleOpts := (dict "transpiler" "dartsass" "targetPath" "index.css" "outputStyle" "compressed") }}
-		{{ $style := resources.Get "scss/buildIndex.scss" | resources.ToCSS $styleOpts }}
+		{{ $style := resources.Get "scss/buildIndex.scss" | css.Sass $styleOpts }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 		<title>{{ .Site.Title }}</title>
 		<link href="{{ .Site.Params.social.Mastodon }}" rel="me">
