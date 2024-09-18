@@ -1,0 +1,19 @@
+{{ if or .NextInSection .PrevInSection }}
+	{{ $prev :=  "" }}
+	{{ $next :=  "" }}
+	{{ if .Params.reversePageTurner }}
+		{{ $prev = .PrevInSection }}
+		{{ $next = .NextInSection }}
+	{{ else }}
+		{{ $prev = .NextInSection }}
+		{{ $next = .PrevInSection }}
+	{{ end }}
+	<nav id="pageTurner" class="flexed grow">
+		{{ with $prev }}
+			<a class="button secondary" id="nextInSection" href="{{ .RelPermalink }}">Prev: {{ .Title }}</a>
+		{{ end }}
+		{{ with $next }}
+			<a class="button secondary" id="prevInSection" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>
+		{{ end }}
+	</nav>
+{{ end }}
