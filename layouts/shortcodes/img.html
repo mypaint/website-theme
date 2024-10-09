@@ -2,6 +2,21 @@
 {{ $src := printf "src=%q" (partial "get/src.html" (dict "context" . "src" (.Get "src"))) | safeHTMLAttr }}
 {{ $width := "" }}
 {{ $height := "" }}
+{{ $caption := "" }}
+{{ $captionArg := "" }}
+{{ $captionInner := "" }}
+
+{{ with (.Get "caption") }}
+	{{ $captionArg = . }}
+	{{ $caption = . }}
+{{ end }}
+{{ with .Inner }}
+	{{ $captionInner = . }}
+	{{ $caption = . }}
+{{ end }}
+{{ if (and $captionArg $captionInner) }}
+	{{ errorf "The %q shortcode accepts either an inner caption or a caption argument but not both. See %s." .Name .Position }}
+{{ end }}
 
 {{ with (.Get "width") }}
 	{{ $width = printf "width:%s;" . }}
@@ -27,10 +42,10 @@
 {{ $style := printf "style=%q" (trim (print $width $height) " ") | safeHTMLAttr }}
 
 
-{{ if (.Get "caption") }}
+{{ if $caption }}
 	<figure {{ $classes }} {{ $style }}>
 		<img {{ $src }} {{ $alt }}/>
-		<figcaption>{{ .Get "caption" }}</figcaption>
+		<figcaption>{{ with .Page }}{{ $caption | markdownify }}{{ end }}</figcaption>
 	</figure>
 {{ else }}
 	<img {{ $classes }} {{ $style }} {{ $src }} {{ $alt }}/>
