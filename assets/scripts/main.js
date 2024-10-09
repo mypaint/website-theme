@@ -1,6 +1,6 @@
 import { switchTheme, watchFavicon } from "./theme.js"
 import { toggleMenu } from "./reactiveDesign.js"
-import { initialiseDetails, watchDetailState } from "./aside/details.js"
+import { initialiseDetails, watchDetailsState } from "./aside/details.js"
 import { watchLanguage } from "./aside/lang.js"
 import { watchHeadings } from "./aside/pageNav.js"
 
@@ -9,19 +9,17 @@ const themeButton = document.querySelector("#themeButton")
 if (themeButton) {
 	themeButton.addEventListener('click', switchTheme)
 }
-watchFavicon()
+watchFavicon() // Matches browser UI theme, not website theme
 
 // Hamburger menu
 document.getElementById("headerNavMenu").addEventListener('click', toggleMenu)
 
-// Aside details state
+// Aside navigation <details> state
 initialiseDetails()
 const detailsList = document.querySelectorAll("aside nav > details")
-for (const detail of detailsList) {
-	detail.addEventListener("toggle", watchDetailState)
+for (const details of detailsList) {
+	details.addEventListener("toggle", watchDetailsState)
 }
-//setDetailsState();
-//openDetailsChildren();
 
 // Change language
 watchLanguage()

@@ -1,7 +1,3 @@
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/+esm"
-
-const rootElem = document.documentElement
-
 let mermaidTheme = "base"
 if (rootElem.classList.contains("darkTheme") ||
 	rootElem.classList.contains("systemTheme") &&

@@ -1,3 +1,4 @@
+// Set the theme early to avoid blinding users
 const rootElem = document.documentElement
 let currentTheme = localStorage.getItem("currentTheme")
 
