@@ -45,7 +45,7 @@
 {{ if $caption }}
 	<figure {{ $classes }} {{ $style }}>
 		<img {{ $src }} {{ $alt }}/>
-		<figcaption>{{ with .Page }}{{ $caption | markdownify }}{{ end }}</figcaption>
+		<figcaption>{{ $caption | markdownify }}</figcaption>
 	</figure>
 {{ else }}
 	<img {{ $classes }} {{ $style }} {{ $src }} {{ $alt }}/>
