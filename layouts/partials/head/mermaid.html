@@ -1,8 +1,3 @@
 {{ if .Store.Get "hasMermaid" }}
-	{{ with resources.GetRemote "https://www.unpkg.com/mermaid/dist/mermaid.min.js" }}
-		<script src='{{ .RelPermalink }}' type="text/javascript"></script>
-		{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/mermaid.js" "args" "type=\"text/javascript\"") }}
-	{{ else }}
-		{{ errorf "The mermaid partial could not download mermaid from unpkg" }}
-	{{ end }}
+	{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/mermaid.js" "args" "type=\"module\"") }}
 {{ end }}

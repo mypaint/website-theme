@@ -1,3 +1,5 @@
+import mermaid from 'mermaid'
+
 let mermaidTheme = "base"
 if (rootElem.classList.contains("darkTheme") ||
 	rootElem.classList.contains("systemTheme") &&
