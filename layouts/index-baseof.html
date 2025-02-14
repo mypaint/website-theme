@@ -3,8 +3,8 @@
 	<head>
 		{{ partialCached "head/head.html" . }}
 		{{ partial "head/metadata.html" . }}
-		<script defer="" src='{{ (resources.Get "scripts/index.js").RelPermalink }}' type="text/javascript"></script>
-		<script defer="" src='{{ (resources.Get "scripts/main.js").RelPermalink }}' type="module"></script>
+		{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/index.js" "args" "defer=\"\" type=\"module\"") }}
+		{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/main.js" "args" "defer=\"\" type=\"module\"") }}
 		<!-- Stylesheet -->
 		{{ $styleOpts := (dict "transpiler" "dartsass" "targetPath" "index.css" "outputStyle" "compressed") }}
 		{{ $style := resources.Get "scss/buildIndex.scss" | css.Sass $styleOpts }}

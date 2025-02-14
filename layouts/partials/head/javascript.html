@@ -1,3 +1,2 @@
-{{ $scripts := resources.Get "scripts" }}
-<script src='{{ (resources.Get "scripts/quick.js").RelPermalink }}' type="text/javascript"></script>
-<script defer="" src='{{ (resources.Get "scripts/main.js").RelPermalink }}' type="module"></script>
+{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/quick.js" "args" "type=\"text/javascript\"") }}
+{{ partial "head/javascriptEmbed.html" (dict "script" "scripts/main.js" "args" "defer=\"\" type=\"module\"") }}

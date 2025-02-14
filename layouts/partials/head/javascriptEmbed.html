@@ -1,0 +1,25 @@
+{{ $target := "" }}
+
+{{ $opts := dict
+	"minify" hugo.IsProduction
+	"sourceMap" (cond hugo.IsProduction "" "external")
+	"targetPath" $target
+}}
+
+{{ with .target }}
+	{{ $target = . }}
+{{ else }}
+	{{ $target = .script }}
+{{ end }}
+
+{{ with resources.Get .script | js.Build $opts }}
+	{{ if hugo.IsProduction }}
+		{{ with . | fingerprint }}
+			<script src='{{ .RelPermalink }}' integrity="{{ .Data.Integrity }}" crossorigin="anonymous" {{ with $.args }}{{ . | safeHTMLAttr }}{{ end }}></script>
+		{{ end }}
+	{{ else }}
+		<script src='{{ .RelPermalink }}'></script>
+	{{ end }}
+{{ else }}
+	{{ errorf "partial javascriptEmbed \"script\" points to path %q which does not exist." .script }}
+{{ end }}
