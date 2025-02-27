@@ -7,7 +7,7 @@ description = "The theme of MyPaint's website"
 homepage = 'https://github.com/mypaint/website-theme'
 
 # If you have a running demo of the theme
-demosite = 'https://mypaint.org/'
+demosite = 'https://www.mypaint.app/'
 
 # If the theme has multiple authors
 authors = [
