@@ -1,4 +1,4 @@
-@import 'base/screenSizes';
+@use 'base/screenSizes' as screen;
 
 :root {
 	--aside-position: sticky;
@@ -8,7 +8,7 @@
 	--site-nav-display: none;
 }
 
-@media screen and (max-width: $small-screen) {
+@media screen and (max-width: screen.$small-screen) {
 	:root {
 		--aside-display: none;
 	}

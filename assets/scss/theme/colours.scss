@@ -1,14 +1,14 @@
-@import 'theme/opencolor';
+@use 'theme/opencolor' as col;
 
 // Global
 :root {
 	// Dark theme
 	--dark-alt-colour-1: rgba(255,255,255,0.05);
-	--dark-text-colour: #{$gray-0};
+	--dark-text-colour: #{col.$gray-0};
 	/// Links
-	--dark-link-colour: #{$blue-4};
-	--dark-link-colour-hover: #{$blue-3};
-	--dark-link-colour-active: #{$blue-2};
+	--dark-link-colour: #{col.$blue-4};
+	--dark-link-colour-hover: #{col.$blue-3};
+	--dark-link-colour-active: #{col.$blue-2};
 	// Light theme
 	--light-alt-colour-1: rgba(0,0,0,0.05);
 	--light-alt-colour-2: rgba(0,0,0,0.075);
@@ -18,29 +18,29 @@
 }
 
 @mixin lightTheme {
-	--body-background-colour: #{$gray-0};
+	--body-background-colour: #{col.$gray-0};
 	--background-colour: var(--body-background-colour);
 	--alt-colour-1: var(--light-alt-colour-1);
 	--alt-colour-2: var(--light-alt-colour-2);
 	--alt-colour-3: var(--light-alt-colour-3);
 	--alt-colour-1-hex: #ebebeb;
 	// Text
-	--text-colour: #{$gray-9};
-	--text-colour-alt-1: #{$gray-8};
-	--text-colour-alt-2: #{$gray-7};
+	--text-colour: #{col.$gray-9};
+	--text-colour-alt-1: #{col.$gray-8};
+	--text-colour-alt-2: #{col.$gray-7};
 	// Links
-	--link-colour: #{$blue-7};
-	--link-colour-hover: #{$blue-8};
-	--link-colour-active: #{$blue-9};
-	--link-colour-visited: #{$violet-5};
-	--link-colour-visited-hover: #{$violet-7};
-	--link-colour-visited-active: #{$violet-9};
+	--link-colour: #{col.$blue-7};
+	--link-colour-hover: #{col.$blue-8};
+	--link-colour-active: #{col.$blue-9};
+	--link-colour-visited: #{col.$violet-5};
+	--link-colour-visited-hover: #{col.$violet-7};
+	--link-colour-visited-active: #{col.$violet-9};
 	// Hash
-	--hash-colour-parent-hover: #{$gray-5};
+	--hash-colour-parent-hover: #{col.$gray-5};
 	--hash-colour-hover: var(--text-colour-alt-2);
 	// Colours
-	--yellow: #{$yellow-9};
-	--red: #{$red-9};
+	--yellow: #{col.$yellow-9};
+	--red: #{col.$red-9};
 	// Chroma
 	--code-blue: #2D7CBE;
 	--code-green: #4D7133;
@@ -53,7 +53,7 @@
 }
 
 @mixin darkTheme {
-	--body-background-colour: #{$gray-10};
+	--body-background-colour: #{col.$gray-10};
 	--background-colour: var(--body-background-colour);
 	--alt-colour-1: var(--dark-alt-colour-1);
 	--alt-colour-2: rgba(255,255,255,0.075);
@@ -61,21 +61,21 @@
 	--alt-colour-1-hex: #222222;
 	// Text
 	--text-colour: var(--dark-text-colour);
-	--text-colour-alt-1: #{$gray-2};
-	--text-colour-alt-2: #{$gray-5};
+	--text-colour-alt-1: #{col.$gray-2};
+	--text-colour-alt-2: #{col.$gray-5};
 	// Links
 	--link-colour: var(--dark-link-colour);
 	--link-colour-hover: var(--dark-link-colour-hover);
 	--link-colour-active: var(--dark-link-colour-active);
-	--link-colour-visited: #{$violet-4};
-	--link-colour-visited-hover: #{$violet-3};
-	--link-colour-visited-active: #{$violet-2};
+	--link-colour-visited: #{col.$violet-4};
+	--link-colour-visited-hover: #{col.$violet-3};
+	--link-colour-visited-active: #{col.$violet-2};
 	// Hash
-	--hash-colour-parent-hover: #{$gray-6};
-	--hash-colour-hover: #{$gray-4};
+	--hash-colour-parent-hover: #{col.$gray-6};
+	--hash-colour-hover: #{col.$gray-4};
 	// Colours
-	--yellow: #{$yellow-4};
-	--red: #{$red-6};
+	--yellow: #{col.$yellow-4};
+	--red: #{col.$red-6};
 	// Chroma
 	--code-blue: #61afef;
 	--code-green: #98c379;

@@ -1,4 +1,4 @@
-@import 'base/screenSizes';
+@use 'base/screenSizes' as screen;
 
 aside {
 	width: 100%;
@@ -20,7 +20,7 @@ aside {
 	display: var(--site-nav-display);
 }
 
-@media screen and (max-width: $small-screen) {
+@media screen and (max-width: screen.$small-screen) {
 	.asideOpen aside > div { // Clean this up
 		// Display
 		z-index: var(--z-index-high);

@@ -1,4 +1,4 @@
-@import 'base/screenSizes';
+@use 'base/screenSizes' as screen;
 
 :root {
 	--header-position: initial;
@@ -9,13 +9,13 @@
 	--header-scroll-padding: 0;
 }
 
-@media screen and (max-width: $medium-screen) {
+@media screen and (max-width: screen.$medium-screen) {
 	:root {
 		--header-nav-gap: 3rem;
 	}
 }
 
-@media screen and (max-width: $small-screen) {
+@media screen and (max-width: screen.$small-screen) {
 	:root {
 		--header-position: sticky;
 		--header-menu-display: block;

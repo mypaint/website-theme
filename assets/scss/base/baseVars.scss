@@ -1,4 +1,4 @@
-@import 'base/screenSizes';
+@use 'base/screenSizes' as screen;
 
 :root {
 	// Global
@@ -23,18 +23,18 @@
 }
 
 // Small width
-@media screen and (max-width: $large-screen){
+@media screen and (max-width: screen.$large-screen){
 	:root {
 		--main-columns: minmax(16rem, 1fr) 5fr 0;
 	}
 }
-@media screen and (max-width: $medium-screen) {
+@media screen and (max-width: screen.$medium-screen) {
 	:root {
 		--body-side-padding: 2rem;
 	}
 }
 
-@media screen and (max-width: $small-screen) {
+@media screen and (max-width: screen.$small-screen) {
 	:root {
 		// Main
 		--main-with-image-padding: 0;
@@ -47,7 +47,7 @@
 	}
 }
 
-@media screen and (max-width: $smaller-screen){
+@media screen and (max-width: screen.$smaller-screen){
 	:root {
 		--article-title-size: 2.8em;
 	}

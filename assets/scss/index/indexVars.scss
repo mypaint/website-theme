@@ -1,4 +1,4 @@
-@import 'base/screenSizes';
+@use 'base/screenSizes' as screen;
 
 // Vars
 :root {
@@ -29,12 +29,12 @@
 	--alt-colour-3: rgba(0,0,0,0.3);
 }
 
-@media screen and (max-width: $medium-screen) {
+@media screen and (max-width: screen.$medium-screen) {
 	:root {
 		--section-combi-flex-direction: column;
 	}
 }
-@media screen and (max-width: $small-screen) {
+@media screen and (max-width: screen.$small-screen) {
 	:root {
 		// Header
 		--header-position: fixed;
